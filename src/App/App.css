@@ -22,9 +22,10 @@ body {
 .Logo-container {
   margin: auto;
   
-  height: 200px;
+  height: 300px;
 
-  top: 50px;
+  padding-top: 50px;
+  margin-bottom: 20px;
 }
 
 .Logo {
@@ -46,6 +47,11 @@ body {
   border-radius: 25px;
 
   margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  padding: 10px;
+
   width: 50%;
 }
 
@@ -60,10 +66,12 @@ body {
 
 .LeaderBoard-header {
   font-size: 48px;
+
   padding: 20px 0;
+  
   width: 100%;
   border-radius: 25px;
-  background-color: rgba(237, 187, 243, 0.349);
+  background: linear-gradient(rgba(162, 233, 255, 0.8), azure)
 }
 
 .Score {

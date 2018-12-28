@@ -5,11 +5,13 @@ import TournamentText from './TournamentText'
 function LogoIMG(props: any) {
   return (
     <section className="Logo-container">
-      <img 
-        src={ Logo } 
-        alt="Logo"
-        className="Logo"
+      <a href="http://vizmoo.com/groovecatcher">
+        <img 
+          src={ Logo } 
+          alt="Logo"
+          className="Logo"
         />
+      </a>
     </section>
   )
 }

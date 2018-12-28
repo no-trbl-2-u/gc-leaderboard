@@ -12,17 +12,19 @@ export default function
     return (
       <div className="LeaderBoard-container">
         {
-          entries
-            .filter(ea => inputValue
-              ? ea.name.includes(inputValue)
-              : false )
-            .map(({name, score}, index) => (
-              <Score
-                key={ index }
-                name={ name }
-                score={ score } 
-              />
-            ))
+          inputValue !== "" 
+            ? entries
+              .filter(ea => inputValue
+                ? ea.name.includes(inputValue)
+                : false )
+              .map(({name, score}, index) => (
+                <Score
+                  key={ index }
+                  name={ name }
+                  score={ score } 
+                />
+              ))
+            : <p>Results will be shown here</p>
         }
       </div>
     );

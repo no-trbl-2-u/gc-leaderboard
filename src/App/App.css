@@ -32,7 +32,7 @@ body {
 
   /* object-fit: contain; */
 }
-
+/* Media Query -> change height of IMG */
 .Logo {
   height: 100%;
   border: 3px solid purple;

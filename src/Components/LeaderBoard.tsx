@@ -16,7 +16,7 @@ export default function
             // \ :== (a, b) -> Boolean
             .sort((a, b) => b.score - a.score)
             // \ :== (obj, Number) -> Boolean
-            .filter((ea, index) => (index < 3))
+            .filter((ea, index) => (index < 10))
             // \ :== ((String, Number), Number) -> JSX
             .map(
               ({name, score}, index) => (

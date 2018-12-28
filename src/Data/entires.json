@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Anthony Allen",
+    "score": 849,
+    "available": true,
+    "contact": {
+      "phone": "267-go-fuckyourself",
+      "twitter": "@goFuckYourself"
+    }
+  },
+  {
+    "name": "David Rehmat",
+    "score": 848,
+    "available": false,
+    "contact": {
+      "phone": "215-go-fuckyourself",
+      "twitter": "@goFuckYourselfNahJustPlayinBro"
+    }
+  }
+]

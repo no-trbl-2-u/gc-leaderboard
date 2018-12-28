@@ -1,0 +1,106 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+
+  background: linear-gradient(purple, white);
+  
+}
+
+.Logo-container {
+  margin: auto;
+  
+  height: 200px;
+
+  top: 50px;
+}
+
+.Logo {
+  height: 100%;
+  border: 5px solid purple;
+  border-radius: 25px;
+  box-shadow: 4px 4px black;
+}
+
+.Logo:active {
+  box-shadow: 2px 2px black;
+  transform: translateY(2px);
+}
+
+.TournamentText-container {
+  font-size: 18px;
+  background-color: azure;
+
+  border-radius: 25px;
+
+  margin: auto;
+  width: 50%;
+}
+
+.LeaderBoard-container {
+  background-color: azure;
+
+  margin: auto;
+  height: 500px;
+  width: 60%;
+  border-radius: 25px;
+}
+
+.LeaderBoard-header {
+  font-size: 48px;
+  padding: 20px 0;
+  width: 100%;
+  border-radius: 25px;
+  background-color: rgba(237, 187, 243, 0.349);
+}
+
+.Score {
+  margin: auto;
+
+  border-radius: 25px;
+  border: 1px solid white;
+
+  padding: 24px;
+  margin-top: 8px;
+  width: 60%;
+
+  background-color: purple;
+  color: white;
+}
+
+.player {
+  font-weight: 800;
+  font-size: 24px;
+
+  padding: 3px;
+  border-radius: 25px;
+  
+  /* background-color: rgb(231, 163, 240); */
+  color: white;
+}
+
+.player-score {
+  font-weight: 800;
+  font-size: 24px;
+
+  padding: 1px;
+  border-radius: 25px;
+
+  /* background-color: rgb(211, 72, 230); */
+  color: white;
+
+  float: left;
+  padding-left: 16px;
+}

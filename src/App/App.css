@@ -123,3 +123,15 @@ body {
   float: left;
   padding-left: 16px;
 }
+
+.SearchScore-container {
+  margin: auto;
+  /* background-color: yellow; */
+  width: 100%;
+}
+
+.SearchBar {
+  margin: 10px;
+  font-size: 24px;
+  height: 30px;
+}

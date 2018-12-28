@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import LogoIMG from '../Components/LogoIMG';
 import TournamentText from '../Components/TournamentText';
 import LeaderBoard from '../Components/LeaderBoard';
+import SeachScore from '../Components/SearchScore/SearchScore';
 
 import entries from '../Data/entires.json';
 
@@ -13,7 +14,8 @@ export default function App() {
     <div className="App">
       <LogoIMG />
       <TournamentText />
-      <LeaderBoard entries={entries} />
+      <LeaderBoard entries={ entries } />
+      <SeachScore entries={ entries } />
     </div>
   );
 }

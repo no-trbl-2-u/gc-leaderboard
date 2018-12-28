@@ -12,14 +12,21 @@ export default function
       <section className="LeaderBoard-container">
         <header className="LeaderBoard-header">Leader Board</header>
         {
-          entries.map(
-            ({name, score}) => (
-              <Score
-                name={ name }
-                score={ score }
-              />
+          [...entries]
+            // \ :== (a, b) -> Boolean
+            .sort((a, b) => b.score - a.score)
+            // \ :== (obj, Number) -> Boolean
+            .filter((ea, index) => (index < 10))
+            // \ :== ((String, Number), Number) -> JSX
+            .map(
+              ({name, score}, index) => (
+                <Score
+                  key={ index }
+                  name={ name }
+                  score={ score }
+                />
+              )
             )
-          )
         }
       </section>
   )

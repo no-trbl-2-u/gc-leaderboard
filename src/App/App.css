@@ -16,21 +16,26 @@ body {
   text-align: center;
 
   background: linear-gradient(purple, white);
-  
+
+  object-fit: contain;
 }
 
 .Logo-container {
   margin: auto;
+  /* margin-left: 13%; */
   
   height: 300px;
+  width: 100%;
 
   padding-top: 50px;
   margin-bottom: 20px;
+
+  /* object-fit: contain; */
 }
 
 .Logo {
   height: 100%;
-  border: 5px solid purple;
+  border: 3px solid purple;
   border-radius: 25px;
   box-shadow: 4px 4px black;
 }
@@ -59,9 +64,14 @@ body {
   background-color: azure;
 
   margin: auto;
-  height: 500px;
+  /* height: 500px; */
   width: 60%;
+  margin-bottom: 25px;
+
   border-radius: 25px;
+
+  border: 2px solid black;
+  box-shadow: 4px 4px black;
 }
 
 .LeaderBoard-header {
@@ -82,6 +92,7 @@ body {
 
   padding: 24px;
   margin-top: 8px;
+  margin-bottom: 8px;
   width: 60%;
 
   background-color: purple;

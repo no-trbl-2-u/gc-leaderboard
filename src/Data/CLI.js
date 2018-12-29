@@ -2,6 +2,13 @@ const inquirer = require('inquirer')
 
 // const data = require('./entires.json')
 
+
+// ADD VALIDATION FUNCTIONS TO MANY
+// ADD THE REST OF THE QUESTIONS
+// CREATE FUNCTIONS:
+//  //  createEntry() -> [newEntries] ** TRY TO USE PIPE?? ** (define yourself)
+//  //  addEntry() = await entries.concat(createEntry()) OR entries.concat(newEntries)
+//  //  using require('fs') -> Overwrite the original entries.json
 const questions = [
   {
     type: 'input',
@@ -12,13 +19,7 @@ const questions = [
     type: 'input',
     name: 'score',
     message: 'What did they score?',
-    validate: function(value) {
-      if(value <= 1000){
-        return true
-      }else{
-        return 'Impossible Score'
-      }
-    }
+    validate: value => (value <= 1000) ? true : 'Impossible Score'
   },
   {
     type: 'list',

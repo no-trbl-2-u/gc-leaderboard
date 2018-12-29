@@ -1,6 +1,5 @@
 [
   {
-    "index": 0,
     "name": "Anthony Allen",
     "score": 900,
     "available": true,
@@ -10,7 +9,6 @@
     }
   },
   {
-    "index": 1,
     "name": "David Rehmat Jr.",
     "score": 880,
     "available": false,
@@ -20,7 +18,6 @@
     }
   },
   {
-    "index": 2,
     "name": "David Rehmat",
     "score": 830,
     "available": false,
@@ -30,7 +27,6 @@
     }
   },
   {
-    "index": 3,
     "name": "Other Guy",
     "score": 853,
     "available": false,
@@ -40,7 +36,6 @@
     }
   },
   {
-    "index": 4,
     "name": "David Rehmat",
     "score": 848,
     "available": false,
@@ -50,7 +45,6 @@
     }
   },
   {
-    "index": 5,
     "name": "David Rehmat",
     "score": 848,
     "available": false,
@@ -60,7 +54,6 @@
     }
   },
   {
-    "index": 6,
     "name": "David Rehmat",
     "score": 848,
     "available": false,
@@ -70,7 +63,6 @@
     }
   },
   {
-    "index": 7,
     "name": "David Rehmat",
     "score": 848,
     "available": false,
@@ -80,7 +72,6 @@
     }
   },
   {
-    "index": 8,
     "name": "David Rehmat",
     "score": 848,
     "available": false,
@@ -90,7 +81,6 @@
     }
   },
   {
-    "index": 9,
     "name": "David Rehmat",
     "score": 848,
     "available": false,
@@ -100,7 +90,6 @@
     }
   },
   {
-    "index": 10,
     "name": "Not on Board",
     "score": 500,
     "available": false,
@@ -110,7 +99,6 @@
     }
   },
   {
-    "index": 11,
     "name": "Not on Board",
     "score": 1000,
     "available": false,

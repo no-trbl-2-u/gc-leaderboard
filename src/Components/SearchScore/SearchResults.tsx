@@ -15,7 +15,7 @@ export default function
           inputValue !== "" 
             ? entries
               .filter(ea => inputValue
-                ? ea.name.includes(inputValue)
+                ? ea.name.toLowerCase().includes(inputValue.toLowerCase())
                 : false )
               .map(({name, score}, index) => (
                 <Score

@@ -11,12 +11,19 @@ const questions = [
   {
     type: 'input',
     name: 'score',
-    message: 'What did they score?'
+    message: 'What did they score?',
+    validate: function(value) {
+      if(value <= 1000){
+        return true
+      }else{
+        return 'Impossible Score'
+      }
+    }
   },
   {
     type: 'list',
     name: 'available',
-    message: 'Are they available to participate in the ?',
+    message: 'Are they available to participate in the tournament?',
     choices: ['true', 'false']
   },
 ]
@@ -40,27 +47,21 @@ function gatherAvailability () {
     .then(answers => Boolean(answers.available))
 }
 
-function gatherAll () {
-  return inquirer
-    .prompt(questions)
-    .then(answers => console.log(answers))
+
+async function main () {
+
+  const name = await gatherName();
+  const score = await gatherScore();
+  const available = await gatherAvailability();
+
+  console.log(`
+    ${name}, you scored ${score} points!
+    It is ${available} that you can make it.
+  `)
+  console.log("main: Program End")
 }
-gatherAll();
 
-// async function main () {
-
-  // const name = await gatherName();
-  // const score = await gatherScore();
-  // const available = await gatherAvailability();
-  // console.log(`
-  //   ${name}, you scored ${score} points!
-  //   It is ${available} that you can make it.
-  // `)
-  // console.log("main: Program End")
-  // gatherName()
-// }
-
-// main();
+main();
 
 
 

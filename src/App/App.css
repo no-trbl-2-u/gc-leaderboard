@@ -22,7 +22,6 @@ body {
 
 .Logo-container {
   margin: auto;
-  /* margin-left: 13%; */
   
   height: 300px;
   width: 100%;
@@ -30,10 +29,8 @@ body {
   padding-top: 50px;
   margin-bottom: 20px;
 
-  /* object-fit: contain; */
 }
 
-/* Media Query -> change height of IMG */
 .Logo {
   height: 100%;
   border: 3px solid purple;
@@ -47,7 +44,7 @@ body {
 }
 
 .TournamentText-container {
-  font-size: 18px;
+  font-size: 3vh;
   background-color: azure;
 
   border-radius: 25px;
@@ -65,7 +62,6 @@ body {
   background-color: azure;
 
   margin: auto;
-  /* height: 500px; */
   width: 60%;
   margin-bottom: 25px;
 
@@ -77,7 +73,6 @@ body {
 
 .LeaderBoard-header {
   font-size: 7vh;
-  /* font-size: 48px; */
 
   padding: 20px 0;
   
@@ -101,6 +96,15 @@ body {
   color: white;
 }
 
+.top3 {
+  background: linear-gradient(purple, white);
+  transform: scale(1.2);
+}
+
+.Score:last-child {
+  margin-bottom: 16px;
+}
+
 .player {
   font-weight: 800;
   font-size: 6vh;
@@ -114,13 +118,11 @@ body {
 
 .player-score {
   font-weight: 800;
-  /* font-size: 24px; */
   font-size: 6vh;
 
   padding: 1px;
   border-radius: 25px;
 
-  /* background-color: rgb(211, 72, 230); */
   color: white;
 
   float: left;
@@ -129,16 +131,17 @@ body {
 
 .SearchScore-container {
   margin: auto;
-  /* background-color: yellow; */
   width: 100%;
 }
 
 .SearchBar {
   margin: 10px;
-  font-size: 24px;
-  height: 30px;
+  font-size: 6vh;
 }
 
+.noResults {
+  font-size: 4vh;
+}
                   /*          Media Queries       */
 @media screen and (max-width: 650px) {
   .Logo-container {
@@ -151,9 +154,9 @@ body {
     margin-top: 5px;
     margin-bottom: 10px;
   
-    padding: 2px;
+    padding: 4px;
   
-    width: 70%;
+    width: 85%;
   }
   .LeaderBoard-container {
     width: 80%;

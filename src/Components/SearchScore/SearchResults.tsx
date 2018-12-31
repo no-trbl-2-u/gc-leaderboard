@@ -21,10 +21,11 @@ export default function
                 <Score
                   key={ index }
                   name={ name }
-                  score={ score } 
+                  score={ score }
+                  top3={""}
                 />
               ))
-            : <p>Results will be shown here</p>
+            : <p className="noResults">Results will be shown here</p>
         }
       </div>
     );

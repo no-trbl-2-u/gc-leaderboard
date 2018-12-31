@@ -27,6 +27,16 @@ const questions = [
     message: 'Are they available to participate in the tournament?',
     choices: ['true', 'false']
   },
+  {
+    type: 'input',
+    name: 'telephone',
+    message: 'What is their Phone Number?'
+  },
+  {
+    type: 'input',
+    name: 'email',
+    message: 'What is their Email?'
+  }
 ]
 
 
@@ -45,21 +55,59 @@ function gatherScore () {
 function gatherAvailability () {
   return inquirer
     .prompt(questions[2])
-    .then(answers => Boolean(answers.available))
+    .then(answers => answers.available)
+}
+
+function gatherPhoneNumber () {
+  return inquirer
+    .prompt(questions[3])
+    .then(answers => String(answers.telephone))
+}
+
+function gatherEmail () {
+  return inquirer
+    .prompt(questions[4])
+    .then(answers => String(answers.email))
 }
 
 
-async function main () {
-
+async function createEntry () {
   const name = await gatherName();
   const score = await gatherScore();
   const available = await gatherAvailability();
+  const telephone = await gatherPhoneNumber();
+  const email = await gatherEmail();
 
-  console.log(`
-    ${name}, you scored ${score} points!
+  return {
+    name,
+    score,
+    available,
+    telephone,
+    email
+  }
+}
+
+async function template (answers) {
+  const {name, score, available, telephone, email} = answers
+  return (
+    `${name}, you scored ${score} points!
     It is ${available} that you can make it.
-  `)
-  console.log("main: Program End")
+    Your telephone # is ${telephone} and your
+    email is ${email}.
+    `
+  )
+}
+
+async function main () {
+
+  console.log('Welcome to the Groove Catcher Data Entry Tool')
+
+  const entryFull = await createEntry();
+  const templateFull = await template(entryFull);
+  console.log(templateFull)
+
+
+  await console.log("main: Program End")
 }
 
 main();

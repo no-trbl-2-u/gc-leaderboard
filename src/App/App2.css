@@ -194,6 +194,8 @@ h3 {
   .TournamentText-container {
     margin-top: 5px;
     margin-bottom: 10px;
+
+    font-size: 2vh;
   
     padding: 4px;
   
@@ -214,5 +216,8 @@ h3 {
   .player-score {
     font-size: 3vh;
     padding-left: 8px;
+  }
+  .twitter {
+    padding: 0px;
   }
 }

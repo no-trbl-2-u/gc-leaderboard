@@ -54,11 +54,68 @@ function askAll () {
     .then(answers => answers)
 }
 
+// Individual Questions (All Return Promises)
+function gatherName () {
+  return inquirer
+    .prompt(questions[0])
+    .then(answers => String(answers.fullName))
+}
+
+function gatherScore () {
+  return inquirer
+    .prompt(questions[1])
+    .then(answers => Number(answers.score))
+}
+
+function gatherAvailability () {
+  return inquirer
+    .prompt(questions[2])
+    .then(answers => answers.available)
+}
+
+function gatherPhoneNumber () {
+  return inquirer
+    .prompt(questions[3])
+    .then(answers => String(answers.telephone))
+}
+
+function gatherEmail () {
+  return inquirer
+    .prompt(questions[4])
+    .then(answers => String(answers.email))
+}
+
+function gatherMailing () {
+  return inquirer
+    .prompt(questions[5])
+    .then(answers => answers.mailingList)
+}
+
+
 // Sanity checker
 function checkCorrect () {
   return inquirer
     .prompt(sanityCheck)
     .then(answers => answers.correct)
+}
+
+// Composed Questions
+async function createEntry () {
+  const name = await gatherName();
+  const score = await gatherScore();
+  const available = await gatherAvailability();
+  const telephone = await gatherPhoneNumber();
+  const mailingList = await gatherMailing();
+  const email = await gatherEmail();
+
+  return {
+    name,
+    score,
+    available,
+    telephone,
+    mailingList,
+    email,
+  }
 }
 
 // Insanity Checker Template (Expects Promise)

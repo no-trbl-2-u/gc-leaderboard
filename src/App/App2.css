@@ -220,4 +220,7 @@ h3 {
   .twitter {
     padding: 0px;
   }
+  .SearchBar {
+    font-size: 4vh;
+  }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from './Logo-Jen-w-sparkle-04-2to1-on-black.png'
+import Logo from './Logo-with-SynchronyLEDs.png';
 import TournamentText from './TournamentText'
 
 function LogoIMG(props: any) {

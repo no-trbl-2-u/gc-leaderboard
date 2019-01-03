@@ -7,7 +7,7 @@ const originalEntries = require('./entries.json');
 const questions = [
   {
     type: 'input',
-    name: 'fullName',
+    name: 'name',
     message: 'What is their full name?'
   },
   {
@@ -79,8 +79,10 @@ async function createTemplate (answers) {
 
 // Top-level abstraction
 async function askQuestions () {
-  console.log('Welcome to the Groove Catcher Data Entry Tool')
-
+  console.log('=============================================');
+  console.log('Welcome to the Groove Catcher Data Entry Tool');
+  console.log('=============================================');
+  console.log('');
   const entryFull = await askAll();
   console.log(await createTemplate(entryFull))
 

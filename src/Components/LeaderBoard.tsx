@@ -14,7 +14,7 @@ export default function
         {
           [...entries]
             // \ :== (a, b) -> Boolean
-            .sort((a, b) => b.score - a.score)
+            .sort((a, b) => Number(b.score) - Number(a.score))
 
             // \ :== (obj, Number) -> Boolean
             .filter((ea, index) => (index <= 10))
@@ -28,7 +28,7 @@ export default function
                 <Score
                   key={ index }
                   name={ name }
-                  score={ score }
+                  score={ Number(score) }
                   top3={(index <= 2) ? "top3" : ""}
                 />
               )

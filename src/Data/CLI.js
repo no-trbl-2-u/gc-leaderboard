@@ -1,14 +1,9 @@
-const inquirer = require('inquirer')
+const inquirer = require('inquirer');
+const fs = require('fs');
 
-// const data = require('./entires.json')
+const originalEntries = require('./entries.json');
 
 
-// ADD VALIDATION FUNCTIONS TO MANY
-// ADD THE REST OF THE QUESTIONS
-// CREATE FUNCTIONS:
-//  //  createEntry() -> [newEntries] ** TRY TO USE PIPE?? ** (define yourself)
-//  //  addEntry() = await entries.concat(createEntry()) OR entries.concat(newEntries)
-//  //  using require('fs') -> Overwrite the original entries.json
 const questions = [
   {
     type: 'input',
@@ -36,10 +31,16 @@ const questions = [
     type: 'input',
     name: 'email',
     message: 'What is their Email?'
-  }
-]
+  },
+  {
+    type: 'list',
+    name: 'correct',
+    message: 'Are you certain of this entry?',
+    choices: ['true', 'false']
+  },
+];
 
-
+// Individual Questions (All Return Promises)
 function gatherName () {
   return inquirer
     .prompt(questions[0])
@@ -71,6 +72,14 @@ function gatherEmail () {
 }
 
 
+// Insanity check
+function checkCorrect () {
+  return inquirer
+    .prompt(questions[5])
+    .then(answers => answers.correct)
+}
+
+// Composed Questions
 async function createEntry () {
   const name = await gatherName();
   const score = await gatherScore();
@@ -87,37 +96,46 @@ async function createEntry () {
   }
 }
 
-async function template (answers) {
+// Insanity Checker Template (Expects Promise)
+async function createTemplate (answers) {
   const {name, score, available, telephone, email} = answers
   return (
-    `${name}, you scored ${score} points!
-    It is ${available} that you can make it.
-    Your telephone # is ${telephone} and your
-    email is ${email}.
+    `
+    Name: ${name}
+    Score: ${score} points!
+    They ${available ? "are" : "aren't"} available for the tournament.
+    Telephone: ${telephone}
+    Email: ${email}
     `
   )
 }
 
-async function main () {
 
+// Top-level abstraction
+async function askQuestions () {
   console.log('Welcome to the Groove Catcher Data Entry Tool')
 
   const entryFull = await createEntry();
-  const templateFull = await template(entryFull);
-  console.log(templateFull)
+  console.log(await createTemplate(entryFull))
 
+  const correct = await checkCorrect();
 
-  await console.log("main: Program End")
+  return (correct === String(true)) ? entryFull : askQuestions();
+}
+
+// Run
+async function main () {
+  const results = await askQuestions();
+
+  const newEntry = originalEntries.concat(results)
+  
+  // Create Backup
+  fs.writeFileSync('entries_backup.json', JSON.stringify(originalEntries))
+
+  // Finalize entry
+  fs.writeFileSync('entries.json', JSON.stringify(newEntry));
+
+  console.log("Entry Successfully added!")
 }
 
 main();
-
-
-
-
-
-// Ask questions
-// Accumulate the answers into an object
-// Add the object to the structure
-// Overwrite old file
-// // require('fs') -> sync file write

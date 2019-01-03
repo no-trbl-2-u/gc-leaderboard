@@ -98,7 +98,7 @@ body {
 
 .top3 {
   background: linear-gradient(purple, white);
-  transform: scale(1.2);
+  /* transform: scale(1.2); */
 }
 
 .Score:last-child {

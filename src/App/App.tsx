@@ -5,7 +5,7 @@ import TournamentText from '../Components/TournamentText';
 import LeaderBoard from '../Components/LeaderBoard';
 import SeachScore from '../Components/SearchScore/SearchScore';
 
-import entries from '../Data/entires.json';
+import entries from '../Data/entries.json';
 
 import './App.css';
 

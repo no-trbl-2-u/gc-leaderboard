@@ -53,7 +53,7 @@ h3 {
   height: 360px;
   width: 100%;
 
-  padding-top: 50px;
+  padding-top: 40px;
   margin-bottom: 20px;
 
 }
@@ -80,12 +80,14 @@ h3 {
   border-radius: 25px;
 
   margin: auto;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 
   padding: 10px;
 
   width: 93%;
+  transform: scale(0.9);
+
 }
 
 .twitter {

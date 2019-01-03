@@ -17,7 +17,7 @@ export default function
             .sort((a, b) => b.score - a.score)
 
             // \ :== (obj, Number) -> Boolean
-            .filter((ea, index) => (index < 10))
+            .filter((ea, index) => (index <= 10))
 
             // \ :== obj -> Boolean
             .filter(ea => ea.available === String(true))

@@ -8,12 +8,23 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  background-color: black;
 
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+h1 {
+  margin: 0px;
+  /* margin-bottom: 0px; */
+  font-size: 4vh;
+}
+
 h2 {
   margin: 16px;
+}
+
+h3 {
+  margin: 12px;
 }
 
 .App {
@@ -29,7 +40,7 @@ h2 {
 .Logo-container {
   margin: auto;
   
-  height: 300px;
+  height: 350px;
   width: 100%;
 
   padding-top: 50px;
@@ -50,10 +61,12 @@ h2 {
 }
 
 .TournamentText-container {
-  font-size: 3vh;
-  background-color: white;
+  /* font-size: 24px; */
+  font-size: 1.3vh;
+  background-color: azure;
 
-  border: 0.75vh solid #FFDF64;
+  border: 0.3vh solid #FFDF64;
+  box-shadow: 4px 4px 28px #FFDF64;
   border-radius: 25px;
 
   margin: auto;
@@ -62,33 +75,41 @@ h2 {
 
   padding: 10px;
 
-  width: 80%;
+  width: 93%;
 }
 
 .twitter {
   /* transform: scale(1.2); */
   background-color: #FFDF64;
+
   padding: 3px;
   border-radius: 25px;
+
+}
+
+.twitter a {
+  text-decoration: none;
+  color: black;
 }
 
 .LeaderBoard-container {
   background-color: azure;
 
   margin: auto;
-  width: 60%;
+  width: 80%;
   margin-bottom: 25px;
 
   border-radius: 25px;
 
-  border: 1vh solid #FFDF64;
-  box-shadow: 4px 4px black;
+  border: 0.3vh solid #FFDF64;
+  box-shadow: 4px 4px 28px #FFDF64;
+
 }
 
 .LeaderBoard-header {
-  font-size: 7vh;
+  font-size: 2.8vh;
 
-  padding: 20px 0;
+  padding: 16px 0;
   
   width: 100%;
   border-radius: 25px;
@@ -99,12 +120,12 @@ h2 {
   margin: auto;
 
   border-radius: 25px;
-  border: 1px solid white;
+  /* border: 1px solid white; */
 
-  padding: 24px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  width: 60%;
+  padding: 18px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  width: 80%;
 
   background-color: black;
   color: red;
@@ -113,7 +134,8 @@ h2 {
 .top3 {
   /* background: linear-gradient(black, white); */
   /* transform: scale(1.2); */
-  border: 1vh solid #FFDF64;
+  border: 0.3vh solid #FFDF64;
+  
 }
 
 .Score:last-child {
@@ -122,10 +144,10 @@ h2 {
 
 .player {
   font-weight: 800;
-  font-size: 6vh;
+  font-size: 1.5vh;
   
 
-  padding: 3px;
+  padding: 2px;
   border-radius: 25px;
   
   color: #FFDF64;
@@ -133,7 +155,7 @@ h2 {
 
 .player-score {
   font-weight: 800;
-  font-size: 6vh;
+  font-size: 1.8vh;
 
   padding: 1px;
   border-radius: 25px;
@@ -141,7 +163,7 @@ h2 {
   color: white;
 
   float: left;
-  padding-left: 16px;
+  padding-left: 24px;
 }
 
 .SearchScore-container {
@@ -151,11 +173,11 @@ h2 {
 
 .SearchBar {
   margin: 10px;
-  font-size: 6vh;
+  font-size: 2vh;
 }
 
 .noResults {
-  font-size: 4vh;
+  font-size: 2vh;
 }
 
 .searchQuestion {

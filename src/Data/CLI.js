@@ -38,13 +38,21 @@ const questions = [
     message: 'Would they like to be on the mailing list?',
     choices: ['true', 'false']
   },
-  {
+];
+
+const sanityCheck = {
     type: 'list',
     name: 'correct',
     message: 'Are you certain of this entry?',
     choices: ['true', 'false']
-  },
-];
+}
+
+// All encompessing questions
+function askAll () {
+  return inquirer
+    .prompt(questions)
+    .then(answers => answers)
+}
 
 // Individual Questions (All Return Promises)
 function gatherName () {
@@ -79,15 +87,15 @@ function gatherEmail () {
 
 function gatherMailing () {
   return inquirer
-    .prompt(questions[6])
+    .prompt(questions[5])
     .then(answers => answers.mailingList)
 }
 
 
-// Insanity check
+// Sanity checker
 function checkCorrect () {
   return inquirer
-    .prompt(questions[5])
+    .prompt(sanityCheck)
     .then(answers => answers.correct)
 }
 
@@ -97,16 +105,16 @@ async function createEntry () {
   const score = await gatherScore();
   const available = await gatherAvailability();
   const telephone = await gatherPhoneNumber();
-  const email = await gatherEmail();
   const mailingList = await gatherMailing();
+  const email = await gatherEmail();
 
   return {
     name,
     score,
     available,
     telephone,
+    mailingList,
     email,
-    mailingList
   }
 }
 
@@ -130,7 +138,7 @@ async function createTemplate (answers) {
 async function askQuestions () {
   console.log('Welcome to the Groove Catcher Data Entry Tool')
 
-  const entryFull = await createEntry();
+  const entryFull = await askAll();
   console.log(await createTemplate(entryFull))
 
   const correct = await checkCorrect();

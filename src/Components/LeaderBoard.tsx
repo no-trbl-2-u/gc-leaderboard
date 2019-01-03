@@ -10,7 +10,7 @@ export default function
     const { entries } = props
     return (
       <section className="LeaderBoard-container">
-        <header className="LeaderBoard-header">Leader Board</header>
+        <header className="LeaderBoard-header">Current Qualifiers</header>
         {
           [...entries]
             // \ :== (a, b) -> Boolean
@@ -18,6 +18,9 @@ export default function
 
             // \ :== (obj, Number) -> Boolean
             .filter((ea, index) => (index < 10))
+
+            // \ :== obj -> Boolean
+            .filter(ea => ea.available === String(true))
 
             // \ :== ((String, Number), Number) -> JSX
             .map(

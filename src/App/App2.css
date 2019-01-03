@@ -8,6 +8,8 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .App {
@@ -15,8 +17,8 @@ body {
   width: 100%;
   text-align: center;
 
-  background: linear-gradient(purple, white);
-
+  /* background: linear-gradient(black, white); */
+  background-color: black;
   object-fit: contain;
 }
 
@@ -33,9 +35,9 @@ body {
 
 .Logo {
   height: 100%;
-  border: 3px solid purple;
+  /* border: 2vh solid purple; */
   border-radius: 25px;
-  box-shadow: 4px 4px black;
+  box-shadow: 2px 2px 28px #FFDF64;
 }
 
 .Logo:active {
@@ -45,8 +47,9 @@ body {
 
 .TournamentText-container {
   font-size: 3vh;
-  background-color: azure;
+  background-color: white;
 
+  border: 0.75vh solid #FFDF64;
   border-radius: 25px;
 
   margin: auto;
@@ -67,7 +70,7 @@ body {
 
   border-radius: 25px;
 
-  border: 2px solid black;
+  border: 1vh solid #FFDF64;
   box-shadow: 4px 4px black;
 }
 
@@ -78,7 +81,7 @@ body {
   
   width: 100%;
   border-radius: 25px;
-  background: linear-gradient(rgba(162, 233, 255, 0.8), azure)
+  /* background: linear-gradient(rgba(162, 233, 255, 0.8), azure) */
 }
 
 .Score {
@@ -92,15 +95,14 @@ body {
   margin-bottom: 8px;
   width: 60%;
 
-  background-color: purple;
-  color: white;
+  background-color: black;
+  color: red;
 }
 
 .top3 {
-  background: linear-gradient(purple, white);
-  border: 0.5vh solid black;
-  
+  /* background: linear-gradient(black, white); */
   /* transform: scale(1.2); */
+  border: 1vh solid #FFDF64;
 }
 
 .Score:last-child {
@@ -115,7 +117,7 @@ body {
   padding: 3px;
   border-radius: 25px;
   
-  color: white;
+  color: #FFDF64;
 }
 
 .player-score {
@@ -143,6 +145,10 @@ body {
 
 .noResults {
   font-size: 4vh;
+}
+
+.searchQuestion {
+  color: #FFDF64;
 }
                   /*          Media Queries       */
 @media screen and (max-width: 650px) {

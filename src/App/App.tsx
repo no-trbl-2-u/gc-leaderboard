@@ -7,7 +7,11 @@ import SeachScore from '../Components/SearchScore/SearchScore';
 
 import entries from '../Data/entries.json';
 
-import './App.css';
+// Purple/white
+// import './App.css';
+
+// Black/yellow
+import './App2.css';
 
 export default function App() {
   return (
@@ -19,9 +23,3 @@ export default function App() {
     </div>
   );
 }
-
-/*
-  <LogoIMG />     // w/ competition
-  <Scoreboard />  // w/ (<Top3 /> ++ <Rest />)
-  <SearchScore /> // w/ <ScoreDisplay />
-*/

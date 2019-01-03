@@ -34,6 +34,12 @@ const questions = [
   },
   {
     type: 'list',
+    name: 'mailingList',
+    message: 'Would they like to be on the mailing list?',
+    choices: ['true', 'false']
+  },
+  {
+    type: 'list',
     name: 'correct',
     message: 'Are you certain of this entry?',
     choices: ['true', 'false']
@@ -71,6 +77,12 @@ function gatherEmail () {
     .then(answers => String(answers.email))
 }
 
+function gatherMailing () {
+  return inquirer
+    .prompt(questions[6])
+    .then(answers => answers.mailingList)
+}
+
 
 // Insanity check
 function checkCorrect () {
@@ -86,19 +98,21 @@ async function createEntry () {
   const available = await gatherAvailability();
   const telephone = await gatherPhoneNumber();
   const email = await gatherEmail();
+  const mailingList = await gatherMailing();
 
   return {
     name,
     score,
     available,
     telephone,
-    email
+    email,
+    mailingList
   }
 }
 
 // Insanity Checker Template (Expects Promise)
 async function createTemplate (answers) {
-  const {name, score, available, telephone, email} = answers
+  const {name, score, available, telephone, email, mailingList} = answers
   return (
     `
     Name: ${name}
@@ -106,6 +120,7 @@ async function createTemplate (answers) {
     They ${available ? "are" : "aren't"} available for the tournament.
     Telephone: ${telephone}
     Email: ${email}
+    They ${mailingList ? "would" : "would not"} like to be on the mailing list.
     `
   )
 }

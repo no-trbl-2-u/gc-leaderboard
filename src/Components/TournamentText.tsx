@@ -4,12 +4,20 @@ export default function TournamentText () {
     return (
       <section className="TournamentText-container">
         <div className="TournamentText">
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-          ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-          sunt in culpa qui officia deserunt mollit anim id est laborum."
+          <h1>Groove Catcher Contests!</h1>
+          <h2>$400 in Prizes</h2>
+          <div>Top Prize - Synchrony music-reactive LED kit ($150 value) & Groove Catcher T-shirt
+2nd & 3rd places - Groove Catcher T-shirt
+          </div>
+
+          <h2>Two ways to win</h2>
+
+          <h3>Leaderboard contest - 7PM Saturday</h3>
+          The top 10 players during MAGfest will compete Saturday @ 7pm in a two-round tournament. Play either of our demo levels to enter the contest.
+
+          <h3>Video Sharing Contest</h3>
+          Post a video of you or a friend playing Groove Catcher and @ us - <span className="twitter">@GrooveCatcherVR</span>. Get as many shares or retweets as you can by Saturday at midnight. 
+        
         </div>
       </section>
     );

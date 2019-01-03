@@ -71,8 +71,8 @@ h3 {
 }
 
 .TournamentText-container {
-  /* font-size: 24px; */
-  font-size: 1.3vh;
+  font-size: 24px;
+  /* font-size: 1.3vh; */
   background-color: azure;
 
   border: 0.3vh solid #FFDF64;
@@ -154,8 +154,8 @@ h3 {
 
 .player {
   font-weight: 800;
-  font-size: 1.5vh;
-  
+  /* font-size: 1.5vh; */
+  font-size: 28px;
 
   padding: 2px;
   border-radius: 25px;

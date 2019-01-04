@@ -164,7 +164,27 @@ h3 {
 
 .player-score {
   font-weight: 800;
-  font-size: 1.8vh;
+  /* font-size: 1.8vh; */
+  font-size: 40px;
+
+  padding: 0px;
+  margin: 0px;
+  border-radius: 25px;
+
+  color: white;
+
+  float: right;
+  padding-right: 24px;
+}
+
+.place {
+  font-weight: 800;
+  /* font-size: 1.8vh; */
+
+  /* unsafe */
+  font-size: 40px;
+  margin: auto;
+  /*        */
 
   padding: 1px;
   border-radius: 25px;

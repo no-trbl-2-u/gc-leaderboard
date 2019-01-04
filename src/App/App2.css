@@ -179,11 +179,11 @@ h3 {
 
 .place {
   font-weight: 800;
-  /* font-size: 1.8vh; */
+  font-size: 4vh;
 
   /* unsafe */
-  font-size: 40px;
-  margin: auto;
+  /* font-size: 40px; */
+  /* margin: auto; */
   /*        */
 
   padding: 1px;

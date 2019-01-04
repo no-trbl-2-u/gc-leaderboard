@@ -15,7 +15,7 @@ export default function TournamentText () {
           <h3>Leaderboard contest - 7PM Saturday</h3>
           The top 10 players during MAGfest will compete Saturday @ 7pm in a two-round tournament.
           <div>Follow your ranking at <span className="twitter"><a href="vizmoo.com/magfest">vizmoo.com/magfest</a></span> and stay updated on twitter <span className="twitter">@GrooveCatcherVR</span>.</div>
-          {/* <div>Check your score <span className="twitter"><a href="gc-leaderboard.netlify.com">gc-leaderboard.netlify.com</a></span></div> */}
+          {/* <div>TestCheck your score <span className="twitter"><a href="gc-leaderboard.netlify.com">gc-leaderboard.netlify.com</a></span></div> */}
           <h3>Video Sharing Contest</h3>
           Post a video of you or a friend playing Groove Catcher and @ us - <span className="twitter">@GrooveCatcherVR</span>.
           <div>Get as many shares or retweets as you can by Saturday at midnight.</div>

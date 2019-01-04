@@ -179,10 +179,10 @@ h3 {
 
 .place {
   font-weight: 800;
-  font-size: 4vh;
+  /* font-size: 4vh; */
 
   /* unsafe */
-  /* font-size: 40px; */
+  font-size: 40px;
   /* margin: auto; */
   /*        */
 
@@ -192,7 +192,7 @@ h3 {
   color: white;
 
   float: left;
-  padding-left: 24px;
+  /* padding-left: 24px; */
 }
 
 .SearchScore-container {

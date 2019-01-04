@@ -24,7 +24,7 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
   .sort((a, b) => Number(b.score) - Number(a.score))
 
   // \ :== (obj, Number) -> Boolean
-  .filter((ea, index) => (index <= 10))
+  .filter((ea, index) => (index <= 9))
 
   // \ :== obj -> Boolean
   .filter(ea => ea.available === String(true))

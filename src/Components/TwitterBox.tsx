@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from './Twitter-blue.png';
+import Logo from './FbIgTwLogos.jpeg';
 
 function LogoIMG(props: any) {
   return (
@@ -14,7 +14,7 @@ function LogoIMG(props: any) {
       </a>
 
       <div className="handle">
-          @GrooveCatcher VR
+          @GrooveCatcherVR
       </div>
     </section>
   )

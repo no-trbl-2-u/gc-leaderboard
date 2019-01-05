@@ -16,7 +16,7 @@ export default function
           inputValue !== "" 
             ? 
               [...entries].sort((a, b) => b.score - a.score)
-              .map((ea, index) => ({...ea, 'place': index + 1}))
+              .map((ea, index) => ({...ea, 'place': index }))
               .filter(ea => inputValue
                 ? ea.name.toLowerCase().includes(inputValue.toLowerCase())
                 : false )

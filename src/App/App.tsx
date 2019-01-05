@@ -6,8 +6,10 @@ import TwitterBox from '../Components/TwitterBox';
 import TournamentText from '../Components/TournamentText';
 import LeaderBoard from '../Components/LeaderBoard';
 import SeachScore from '../Components/SearchScore/SearchScore';
+import TournLeaderBoard from '../Components/TournLeaderBoard';
 
 import entries from '../Data/entries.json';
+import tournEntries from '../Data/tournamentEntries.json';
 
 // Purple/white
 // import './App.css';
@@ -21,6 +23,7 @@ export default function App() {
       {/* <LogoIMG /> */}
       <TwitterBox />
       <TournamentText />
+      {/* <TournLeaderBoard entries= { tournEntries } /> */}
       <LeaderBoard entries={ entries } />
       <SeachScore entries={ entries } />
     </div>

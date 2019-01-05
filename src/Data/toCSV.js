@@ -12,7 +12,7 @@ const formatter = (originalEntries, scoreThreshold) => {
     .join('\n')
 };
 const main = () => {
-  const formattedEntry = formatter(originalEntries, 950);
+  const formattedEntry = formatter(originalEntries, 96000);
   console.log(formattedEntry)
   fs.writeFileSync('topScores.txt', formattedEntry);
   console.log("File properly formatted")

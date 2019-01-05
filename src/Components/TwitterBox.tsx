@@ -5,11 +5,9 @@ function LogoIMG(props: any) {
   return (
     <section className="Logo-container">
       <a href="http://vizmoo.com/groovecatcher">
-        <img 
-          src={ Logo } 
-          alt="Logo"
-          className="Logo"
-        />
+      <div className="handle">
+        @GrooveCatcher VR
+      </div>
       </a>
     </section>
   )

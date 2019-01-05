@@ -10,7 +10,7 @@ export default function
     const { entries } = props
     return (
       <section className="LeaderBoard-container">
-        <header className="LeaderBoard-header">Tournament Contestants</header>
+        <header className="LeaderBoard-header">Tournament Scores</header>
         {
           scores(entries)
         }
@@ -24,7 +24,7 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
 // \ :== (a, b) -> Boolean
   .sort((a, b) => Number(b.score) - Number(a.score))
 
-  // \ :== ((String, Number), Number) -> JSX
+  // \ :== ((String, Number), Number) -> JSX.Element
   .map(
     ({name, score}, index: number) => (
       <Score

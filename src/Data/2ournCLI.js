@@ -76,7 +76,6 @@ async function main () {
 
   // Finalize entry
   fs.writeFileSync('tournamentEntries.json', JSON.stringify(newEntry));
-  console.log(newEntry)
 
   console.log("Entry Successfully added!")
 }

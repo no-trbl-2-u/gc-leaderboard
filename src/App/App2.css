@@ -244,12 +244,16 @@ h3 {
   }
   .player-score {
     font-size: 3vh;
-    padding-left: 8px;
+    padding-right: 8px;
   }
   .twitter {
     padding: 0px;
   }
   .SearchBar {
     font-size: 4vh;
+  }
+
+  .place {
+    font-size: 3vh;
   }
 }

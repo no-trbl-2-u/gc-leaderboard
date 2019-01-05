@@ -101,6 +101,20 @@ h3 {
 
 }
 
+.two-ways {
+  margin: auto;
+  margin-top: 0.7vh;
+  /* text-emphasis: 800; */
+  font-size: 2vh;
+
+  background-color: #65A2D9;
+  color: white;
+
+  border-radius: 25px;
+  width: 30%;
+  box-shadow: 2px 2px black;
+}
+
 .twitter {
   /* transform: scale(1.2); */
   background-color: #FFDF64;

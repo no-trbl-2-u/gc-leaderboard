@@ -1,14 +1,21 @@
 import React from 'react'
-import Logo from './Logo-with-SynchronyLEDs.png';
+import Logo from './Twitter-blue.png';
 
 function LogoIMG(props: any) {
   return (
     <section className="Logo-container">
       <a href="http://vizmoo.com/groovecatcher">
-      <div className="handle">
-        @GrooveCatcher VR
-      </div>
+
+        <img 
+          src={ Logo } 
+          alt="Logo"
+          className="Logo"
+        />
       </a>
+
+      <div className="handle">
+          @GrooveCatcher VR
+      </div>
     </section>
   )
 }

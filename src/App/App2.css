@@ -61,8 +61,17 @@ h3 {
 .Logo {
   height: 100%;
   /* border: 2vh solid purple; */
-  border-radius: 25px;
-  box-shadow: 2px 2px 28px #FFDF64;
+  /* border-radius: 25px; */
+  /* box-shadow: 2px 2px 28px #FFDF64; */
+  float: left;
+  margin-left: 100px;
+}
+
+.handle {
+  /* height: 10vh; */
+  font-size: 4vh;
+  margin-top: 10vh;
+  color: white;
 }
 
 .Logo:active {

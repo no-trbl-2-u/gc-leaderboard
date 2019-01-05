@@ -36,7 +36,7 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
         key={ index }
         place={ index + 1 }
         name={ name }
-        score={ Number(score) }
+        score={ (Number(score)) }
         top3={(index <= 2) ? "top3" : ""}
       />
     )

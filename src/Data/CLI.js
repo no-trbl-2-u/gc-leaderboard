@@ -14,7 +14,7 @@ const questions = [
     type: 'input',
     name: 'score',
     message: 'What did they score?',
-    validate: value => (value <= 1000) ? true : 'Impossible Score'
+    validate: value => (value <= 100000) ? true : 'Impossible Score'
   },
   {
     type: 'list',

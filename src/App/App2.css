@@ -234,6 +234,11 @@ h3 {
   font-size: 2vh;
 }
 
+.out-of {
+  font-size: 2vh;
+  margin-top: 1vh;
+}
+
 .searchQuestion {
   color: #ffdf64;
 }

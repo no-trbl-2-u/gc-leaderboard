@@ -11,6 +11,7 @@ export default function
     const { inputValue, entries } = props
     return (
       <div className="LeaderBoard-container">
+        <div className="out-of"> (Out of <span className="twitter">{ entries.length }</span> players at MagFest 2019)</div>
         {
           inputValue !== "" 
             ? 

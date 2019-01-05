@@ -50,7 +50,7 @@ h3 {
 .Logo-container {
   margin: auto;
   
-  height: 360px;
+  height: 300px;
   width: 100%;
 
   padding-top: 40px;
@@ -65,7 +65,7 @@ h3 {
   /* box-shadow: 2px 2px 28px #FFDF64; */
   /* FOR TWITTER */
   float: left;
-  margin-left: 100px;
+  margin-left: 80px;
 }
 
 /* Twitter Handle */

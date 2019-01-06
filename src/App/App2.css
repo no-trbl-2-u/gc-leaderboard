@@ -170,7 +170,7 @@ h3 {
 
 .top {
   border: 0.2vh solid purple;
-  box-shadow: 0.5vh 0.5vh 2vh purple;
+  box-shadow: 0.5vh 0.5vh 2vh purple, -0.5vh -0.5vh 2vh purple;
   margin-bottom: 1vh;
   transform: scale(1.1);
 }

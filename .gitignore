@@ -24,3 +24,12 @@ entries_Day01.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# stuff
+emails.txt
+entries_backup.json
+tournamentEntries_backup.json
+tournamentEntriesRound1.json
+
+CLI-backup.js

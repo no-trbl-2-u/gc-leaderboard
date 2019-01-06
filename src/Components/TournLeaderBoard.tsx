@@ -10,7 +10,7 @@ export default function
     const { entries } = props
     return (
       <section className="LeaderBoard-container">
-        <header className="LeaderBoard-header">Tournament Scores</header>
+        <header className="LeaderBoard-header">Tournament Winner!!!</header>
         {
           scores(entries)
         }
@@ -18,7 +18,6 @@ export default function
   )
 }
 
-// TODO -> Create an "interface for Entry[]
 const scores = (entries: any[]): JSX.Element[] => [...entries]
 
 // \ :== (a, b) -> Boolean
@@ -32,7 +31,7 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
         place={ index + 1 }
         name={ name }
         score={ (Number(score)) }
-        top3={""}
+        top3={"top"}
       />
     )
   )

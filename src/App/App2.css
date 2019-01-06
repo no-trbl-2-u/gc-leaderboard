@@ -94,11 +94,11 @@ h3 {
 
   margin: auto;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 
   padding: 10px;
 
-  width: 93%;
+  width: 95%;
   transform: scale(0.9);
 }
 
@@ -168,6 +168,11 @@ h3 {
   color: red;
 }
 
+.top {
+  border: 0.2vh solid purple;
+  box-shadow: 0.3vh 0.3vh 2vh purple;
+}
+
 .top3 {
   border: 0.3vh solid #ffdf64;
 }
@@ -226,7 +231,8 @@ h3 {
 }
 
 .SearchBar {
-  margin: 10px;
+  margin: 0.3vh;
+  margin-bottom: 1.5vh;
   font-size: 2vh;
 }
 

@@ -7,6 +7,8 @@ import TournamentText from '../Components/TournamentText';
 import LeaderBoard from '../Components/LeaderBoard';
 import SeachScore from '../Components/SearchScore/SearchScore';
 import TournLeaderBoard from '../Components/TournLeaderBoard';
+import AllScores from '../Components/AllScores';
+
 
 import entries from '../Data/entries.json';
 import tournEntries from '../Data/tournamentEntries.json';
@@ -26,6 +28,7 @@ export default function App() {
       <TournLeaderBoard entries= { tournEntries } />
       <LeaderBoard entries={ entries } />
       <SeachScore entries={ entries } />
+      <AllScores entries={ entries } />
     </div>
   );
 }

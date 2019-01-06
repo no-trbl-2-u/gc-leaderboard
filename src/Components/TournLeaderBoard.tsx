@@ -31,7 +31,7 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
         place={ index + 1 }
         name={ name }
         score={ (Number(score)) }
-        top3={"top"}
+        top3={(name === 'HellAshes') ? "top" : ""}
       />
     )
   )

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Score from './Score';
 
 export interface LeaderBoardProps {
@@ -6,7 +6,7 @@ export interface LeaderBoardProps {
 }
 
 export default function 
-  LeaderBoard(props: LeaderBoardProps): JSX.Element {
+  LeaderBoard(props: LeaderBoardProps): JSX.Element {    
     const { entries } = props
     return (
       <section className="LeaderBoard-container">

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 
 import LogoIMG from '../Components/LogoIMG';
 import TwitterBox from '../Components/TwitterBox';
@@ -20,6 +20,7 @@ import tournEntries from '../Data/tournamentEntries.json';
 import './App2.css';
 
 export default function App() {
+
   return (
     <div className="App">
       {/* <LogoIMG /> */}

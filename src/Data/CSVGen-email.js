@@ -5,8 +5,7 @@ const formatter = originalEntries => {
   return originalEntries
     .filter(ea => ea.mailingList === 'true')
     .filter(ea => ea.email !== '')
-    .map(ea => ({name: ea.name,email: ea.email}
-    ))
+    .map(ea => ({name: ea.name,email: ea.email}))
     .map(ea => [ea.name, ea.email])
     .join('\n')
 };

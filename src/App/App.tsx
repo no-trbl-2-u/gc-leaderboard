@@ -10,7 +10,7 @@ import TournLeaderBoard from '../Components/TournLeaderBoard';
 import AllScores from '../Components/AllScores';
 
 
-import entries from '../Data/entries.json';
+import entries from '../Data/publicEntries.json';
 import tournEntries from '../Data/tournamentEntries.json';
 
 // Purple/white

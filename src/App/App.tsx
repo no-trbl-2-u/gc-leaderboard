@@ -21,17 +21,22 @@ import './App2.css';
 
 export default function App() {
 
+  // SET YOUR EVENT TITLE HERE!
+  const event = 'MagFest 2019'
+  // SET THE EVENT TITLE ABOVE!
+
   return (
     <div className="App">
-      {/* <LogoIMG /> */}
       <TwitterBox />
       <TournamentText />
 
+            {/* TOURNAMENT LEADERBOARD */}
       {/* <TournLeaderBoard entries= { tournEntries } /> */}
-      <LeaderBoard entries={ entries } />
-      <SeachScore entries={ entries } />
 
-      {/* ALL THE SCORES ACCUMULATED SO FAR */}
+      <LeaderBoard entries={ entries } />
+      <SeachScore entries={ entries } event={ event }/>
+
+            {/* ALL THE SCORES ACCUMULATED SO FAR */}
       {/* <AllScores entries={ entries } /> */}
     </div>
   );

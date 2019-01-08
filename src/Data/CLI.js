@@ -96,11 +96,12 @@ async function askQuestions () {
 async function main () {
   const results = await askQuestions();
 
+  const backUp = [...originalEntries]
   const privateEntry = originalEntries.concat(results)
   const safeEntry = privateEntry.map(ea => ({name: ea.name, score: ea.score, available: ea.available}))
   
   // Create Backup
-  fs.writeFileSync('entries_backup.json', JSON.stringify(originalEntries))
+  fs.writeFileSync('entries_backup.json', JSON.stringify(backUp))
 
   // Publish public scoring info
   fs.writeFileSync('publicEntries.json', JSON.stringify(safeEntry));

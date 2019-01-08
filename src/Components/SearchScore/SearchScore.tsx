@@ -5,11 +5,12 @@ import SearchResults from './SearchResults';
 
 export interface SearchScoreProps {
   entries: any[];
+  event: string;
 }
 
 export default function
   SearchScore (props: SearchScoreProps) {
-    const { entries } = props;
+    const { entries, event } = props;
     const [inputValue, setInputValue] = useState("");
     
     return (
@@ -23,6 +24,7 @@ export default function
         <SearchResults 
           inputValue={ inputValue }
           entries={ entries }
+          event={ event }
         />
 
       </div>

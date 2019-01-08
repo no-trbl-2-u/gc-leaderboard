@@ -25,10 +25,13 @@ export default function App() {
       {/* <LogoIMG /> */}
       <TwitterBox />
       <TournamentText />
-      <TournLeaderBoard entries= { tournEntries } />
+
+      {/* <TournLeaderBoard entries= { tournEntries } /> */}
       <LeaderBoard entries={ entries } />
       <SeachScore entries={ entries } />
-      <AllScores entries={ entries } />
+
+      {/* ALL THE SCORES ACCUMULATED SO FAR */}
+      {/* <AllScores entries={ entries } /> */}
     </div>
   );
 }

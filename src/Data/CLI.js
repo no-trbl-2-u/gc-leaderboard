@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const originalEntries = require('./entries.json');
+const originalEntries = require('./privateEntries.json');
 
 
 const questions = [
@@ -79,6 +79,7 @@ async function createTemplate (answers) {
 
 // Top-level abstraction
 async function askQuestions () {
+  console.log('');
   console.log('=============================================');
   console.log('Welcome to the Groove Catcher Data Entry Tool');
   console.log('=============================================');
@@ -95,18 +96,17 @@ async function askQuestions () {
 async function main () {
   const results = await askQuestions();
 
-  const newEntry = originalEntries.concat(results)
-  const safeEntry = newEntry
-    .map(ea => ({name: ea.name, score: ea.score}))
+  const privateEntry = originalEntries.concat(results)
+  const safeEntry = privateEntry.map(ea => ({name: ea.name, score: ea.score}))
   
   // Create Backup
   fs.writeFileSync('entries_backup.json', JSON.stringify(originalEntries))
 
   // Publish public scoring info
-  fs.writeFileSync('entries.json', JSON.stringify(safeEntry));
+  fs.writeFileSync('publicEntries.json', JSON.stringify(safeEntry));
 
   // Finalize private entries
-  fs.writeFileSync('privateEntries.json', JSON.stringify(newEntry));
+  fs.writeFileSync('privateEntries.json', JSON.stringify(privateEntry));
 
   console.log("Entry Successfully added!")
 }

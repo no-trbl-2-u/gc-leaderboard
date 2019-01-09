@@ -69,13 +69,15 @@ async function askQuestions () {
 async function main () {
   const results = await askQuestions();
 
-  const newEntry = tournEntries.concat(results)
+  const privateEntry = tournEntries.concat(results)
+  const publicEntry = privateEntry.map(ea => ({name: ea.name, score: ea.score, available: ea.available}))
   
   // Create Backup
   fs.writeFileSync('tournamentEntries_backup.json', JSON.stringify(tournEntries))
 
-  // Finalize entry
-  fs.writeFileSync('tournamentEntries.json', JSON.stringify(newEntry));
+  // Finalize entries
+  fs.writeFileSync('tournamentEntries-private.json', JSON.stringify(privateEntry));
+  fs.writeFileSync('tournamentEntries-public.json', JSON.stringify(publicEntry));
 
   console.log("Entry Successfully added!")
 }

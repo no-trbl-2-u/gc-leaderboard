@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from './Logo-with-SynchronyLEDs.png';
+import Logo from '../Components/Images/Logo-with-SynchronyLEDs.png';
 
 function LogoIMG(props: any) {
   return (

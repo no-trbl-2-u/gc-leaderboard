@@ -4,18 +4,17 @@ export default function TournamentText () {
     return (
       <section className="TournamentText-container">
         <div className="TournamentText">
-          <h1>Groove Catcher Contests!</h1>
-          <h1>$400 in Prizes</h1>
+          <h1>Leaderboard Contest Today </h1>
+          <h1>Finale at 7pm - $200 in Prizes</h1>
           
-          <div>Top Prize - Synchrony music-reactive LED kit ($150 value) & Groove Catcher T-shirt.
+          <div>Play and put your score on the leaderboard by 6.30pm.</div>
           <div>2nd & 3rd places - Groove Catcher T-shirt.</div>
-          </div>
-
-
-          <h2>Video Sharing Contest</h2>
-          Post a video of you or a friend playing Groove Catcher and @ us - <span className="twitter">@GrooveCatcherVR</span>.
-          <div>Get as many shares or retweets as you can by Saturday at midnight.</div>
+          <div>Top 5 players will compete at 7pm on a new level.</div>
         
+          <h2>Top Prize: Synchrony LEDs - music-reactive lights ($150 value)</h2> 
+          <h3>T-shirts for top 3</h3>
+          <div>Follow your score: <span className="twitter">vizmoo.com/vrfest</span></div>
+
         </div>
       </section>
     );

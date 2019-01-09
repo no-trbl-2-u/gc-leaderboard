@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Score from './Score';
+import Score from '../Score';
 
 export interface LeaderBoardProps {
   entries: any[];

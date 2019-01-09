@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from './FbIgTwLogos.jpeg';
+import Logo from '../Components/Images/FbIgTwLogos.jpeg';
 
 function LogoIMG(props: any) {
   return (

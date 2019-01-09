@@ -38,6 +38,7 @@ export default function App() {
 
             {/* ALL THE SCORES ACCUMULATED SO FAR */}
       {/* <AllScores entries={ entries } /> */}
+    
     </div>
   );
 }

@@ -253,10 +253,10 @@ h3 {
 /*          Media Queries       */
 @media screen and (max-width: 650px) {
   .Logo-container {
-    height: 150px;
+    height: 60px;
     width: 100%;
     padding-top: 20px;
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
   }
   .TournamentText-container {
     margin-top: 5px;
@@ -290,8 +290,15 @@ h3 {
   .SearchBar {
     font-size: 4vh;
   }
-
   .place {
     font-size: 3vh;
+  }
+  .handle {
+    float: left;
+    margin-left: 3vh;
+    font-size: 4vh;
+  }
+  .Logo {
+    margin-left: 30px;
   }
 }

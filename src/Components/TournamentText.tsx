@@ -4,11 +4,11 @@ export default function TournamentText () {
     return (
       <section className="TournamentText-container">
         <div className="TournamentText">
-          <h1>Leaderboard Contest Today </h1>
+          <h2>Leaderboard Contest Today </h2>
           <h1>Finale at 7pm - $200 in Prizes</h1>
           
           <div>Play and put your score on the leaderboard by 6.30pm.</div>
-          <div>2nd & 3rd places - Groove Catcher T-shirt.</div>
+          <div>2d & 3rd places - Groove Catcher T-shirt.</div>
           <div>Top 5 players will compete at 7pm on a new level.</div>
         
           <h2>Top Prize: Synchrony LEDs - music-reactive lights ($150 value)</h2> 

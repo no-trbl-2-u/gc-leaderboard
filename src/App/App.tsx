@@ -31,13 +31,13 @@ export default function App() {
       <TournamentText />
 
             {/* TOURNAMENT LEADERBOARD */}
-      {/* <TournLeaderBoard entries= { tournEntries } /> */}
+      <TournLeaderBoard entries= { tournEntries } />
 
       <LeaderBoard entries={ entries } />
       <SeachScore entries={ entries } event={ event }/>
 
             {/* ALL THE SCORES ACCUMULATED SO FAR */}
-      {/* <AllScores entries={ entries } /> */}
+      <AllScores entries={ entries } />
     
     </div>
   );

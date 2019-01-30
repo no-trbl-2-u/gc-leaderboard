@@ -13,18 +13,16 @@ html {
 body {
   height: 100%;
   width: 100%;
+
   margin: 0;
   padding: 0;
-  background-color: black;
 
   font-family: Georgia, 'Times New Roman', Times, serif;
-
   /* overflow: hidden; */
 }
 
 h1 {
   margin: 0px;
-  /* margin-bottom: 0px; */
   font-size: 4vh;
 }
 
@@ -36,7 +34,16 @@ h3 {
   margin: 12px;
 }
 
-.App {
+.LayoutHome {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  object-fit: contain;
+
+  background-color: white;
+}
+
+.LayoutScores {
   height: 100%;
   width: 100%;
   text-align: center;
@@ -72,7 +79,7 @@ h3 {
 
 /* Twitter Handle */
 .handle {
-  font-size: 15vh;
+  font-size: 13vh;
   margin-top: 2.5vh;
   color: white;
   text-shadow: 4px 4px 8px rgb(88, 87, 87);
@@ -300,5 +307,12 @@ h3 {
   }
   .Logo {
     margin-left: 30px;
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  .handle{
+    font-size: 8vh;
   }
 }

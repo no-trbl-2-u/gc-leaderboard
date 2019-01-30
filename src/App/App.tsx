@@ -1,44 +1,33 @@
 import React, { useEffect } from 'react';
+import { Router } from '@reach/router';
 
-import LogoIMG from '../Components/LogoIMG';
-import TwitterBox from '../Components/TwitterBox';
-
-import TournamentText from '../Components/TournamentText';
-import LeaderBoard from '../Components/Boards/LeaderBoard';
-import SeachScore from '../Components/SearchScore/SearchScore';
-import TournLeaderBoard from '../Components/Boards/TournLeaderBoard';
-import AllScores from '../Components/Boards/AllScores';
-
-
+// Data
 import entries from '../Data/publicEntries.json';
 import tournEntries from '../Data/tournamentEntries.json';
 
-// Purple/white
-// import './App.css';
+// Layouts
+import LayoutScores from '../Components/Layouts/LayoutScores';
+import LayoutHome from '../Components/Layouts/LayoutHome';
+import LayoutSelection from '../Components/Layouts/LayoutSelection';
 
-// Black/yellow
+
 import './App2.css';
 
 export default function App() {
-
-  // SET YOUR EVENT TITLE HERE!
-  const event = 'VRFest 2019'
-  // SET THE EVENT TITLE ABOVE!
-
   return (
     <div className="App">
-      <TwitterBox />
-      <TournamentText />
+      <Router>
 
-            {/* TOURNAMENT LEADERBOARD */}
-      <TournLeaderBoard entries= { tournEntries } />
+        <LayoutHome path="/" />
 
-      <LeaderBoard entries={ entries } />
-      <SeachScore entries={ entries } event={ event }/>
+        <LayoutSelection path="/selection" />
 
-            {/* ALL THE SCORES ACCUMULATED SO FAR */}
-      <AllScores entries={ entries } />
-    
+        <LayoutScores
+          path="/scores"
+          entries={ entries } 
+          tournEntries={ tournEntries } 
+        />
+      </Router>
     </div>
   );
 }

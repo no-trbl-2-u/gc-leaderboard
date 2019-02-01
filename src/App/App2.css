@@ -33,6 +33,21 @@ h2 {
 h3 {
   margin: 12px;
 }
+.NavBar > ul > li {
+  float: left;
+}
+.NavBar {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 .LayoutHome {
   height: 100%;

@@ -5,6 +5,9 @@ import { Router } from '@reach/router';
 import entries from '../Data/publicEntries.json';
 import tournEntries from '../Data/tournamentEntries.json';
 
+// Components
+import NavBar from '../Components/NavBar';
+
 // Layouts
 import LayoutScores from '../Components/Layouts/LayoutScores';
 import LayoutHome from '../Components/Layouts/LayoutHome';
@@ -16,14 +19,13 @@ import './App2.css';
 export default function App() {
   return (
     <div className="App">
+      <NavBar />
       <Router>
-
-        <LayoutHome path="/" />
-
+        {/* Temporary Routes until pages are done  */}
+        <LayoutHome path="/home" />
         <LayoutSelection path="/selection" />
-
         <LayoutScores
-          path="/scores"
+          path="/"
           entries={ entries } 
           tournEntries={ tournEntries } 
         />

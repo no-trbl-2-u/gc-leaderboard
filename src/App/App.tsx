@@ -19,7 +19,7 @@ import './App2.css';
 export default function App() {
   return (
     <div className="App">
-      <NavBar />
+      {/* <NavBar /> */}
       <Router>
         {/* Temporary Routes until pages are done  */}
         <LayoutHome path="/home" />

@@ -94,7 +94,7 @@ h3 {
 
 /* Twitter Handle */
 .handle {
-  font-size: 13vh;
+  font-size: 50px;
   margin-top: 2.5vh;
   color: white;
   text-shadow: 4px 4px 8px rgb(88, 87, 87);
@@ -318,16 +318,17 @@ h3 {
   .handle {
     float: left;
     margin-left: 3vh;
-    font-size: 4vh;
+    font-size: 24px;
+    /* font-size: 4vh; */
   }
   .Logo {
     margin-left: 30px;
   }
 }
 
-
+/* 
 @media screen and (max-width: 1000px) {
   .handle{
     font-size: 8vh;
   }
-}
+} */

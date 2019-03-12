@@ -3,20 +3,18 @@ This repo is dedicated to collecting and showcasing high scores for Groove Catch
 
 ## To get Started:
 
-***You will need to install ``` node``` or ```yarn``` in order to run the site locally in a "dev" environment and to use the CLI tool***
+***You will need to install ``` node``` / ```npm``` in order to run the site locally in a "dev" environment and to use the CLI tool***
 
 ```sh
 git clone https://github.com/no-trbl-2-u/gc-leaderboard.git
-yarn install
+npm install
 ```
-```yarn install``` installs all the dependencies ( locally ) that will be needed to run the site.
-
-*To the best of my knowledge, you can use ```yarn install``` or ```npm install```  but yarn is better for this particular repo.*
+```npm install``` installs all the dependencies ( locally ) that will be needed to run the site.
 
 ## To start up the site locally
 Make sure you're in ```/gc-leaderboard``` and **NOT** in a child folder like ```/gc-leaderboard/src```
 ```
-yarn start
+npm start
 ```
 
 ## To add an entry (normal)
@@ -31,7 +29,7 @@ This starts up the familiar questionnaire and will only update the basic "privat
 ```sh
 cd gc-leaderboard/src/Data
 
-node tournament-final.js
+node CLI_tournament-final.js
 ```
 
 ## To manually edit an entry
@@ -80,3 +78,39 @@ All of the tournament information is located inside the ```<TournamentText />```
 ```sh
 cd gc-leaderboard/src/TournamentText
 ```
+
+Now just Change any of the text within the HTML to fit your tournament.
+
+```jsx
+import React from 'react';
+
+export default function TournamentText () {
+    return (
+      <section className="TournamentText-container">
+        <div className="TournamentText">
+
+        {/* Change the Text Below This Part */}
+          
+          <h2>Leaderboard Contest Today </h2>
+          <h1>Finale at 7pm - $200 in Prizes</h1>
+          
+          <div>Play and put your score on the leaderboard by 6.30pm.</div>
+          <div>2d & 3rd places - Groove Catcher T-shirt.</div>
+          <div>Top 5 players will compete at 7pm on a new level.</div>
+        
+          <h2>Top Prize: Synchrony LEDs - music-reactive lights ($150 value)</h2> 
+          <h3>T-shirts for top 3</h3>
+          <div>Follow your score: <span className="twitter">vizmoo.com/vrfest</span>
+
+        {/* Change the Text Above This Part */}
+
+        </div>
+
+        </div>
+      </section>
+    );
+}
+```
+*Hint: **h1,h2,h3** are for "HEADERS"*
+
+*Hint: **div**s are for raw-text*

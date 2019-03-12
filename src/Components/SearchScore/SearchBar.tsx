@@ -13,7 +13,6 @@ export default function
     const handleText = (event: any) => {
       const { value } = event.target
       setInputValue(value)
-      console.log(inputValue)
     }
 
     return (

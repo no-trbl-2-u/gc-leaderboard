@@ -3,6 +3,7 @@ html {
   width: 100%;
   overflow: scroll;
   overflow-x: hidden;
+  background-color: black;
 }
 
 ::-webkit-scrollbar {
@@ -94,6 +95,8 @@ h3 {
 
 /* Twitter Handle */
 .handle {
+  height: 100%;
+  width: 100%;
   font-size: 50px;
   margin-top: 2.5vh;
   color: white;
@@ -316,10 +319,10 @@ h3 {
     font-size: 3vh;
   }
   .handle {
-    float: left;
+    /* float: left; */
     margin-left: 3vh;
     font-size: 24px;
-    /* font-size: 4vh; */
+    /* font-size: 6vw; */
   }
   .Logo {
     margin-left: 30px;

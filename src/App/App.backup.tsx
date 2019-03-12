@@ -33,7 +33,7 @@ export default function App() {
       <SeachScore entries={ entries } event={ event }/>
 
             {/* ALL THE SCORES ACCUMULATED SO FAR */}
-      <AllScores entries={ entries } />
+      <AllScores entries={ entries } event={ event } />
     
     </div>
   );

@@ -12,7 +12,7 @@
     * Will need a prop to define "Event Name"
 */
 
-import React from 'react';
+import React,{ useEffect } from 'react';
 
 import TwitterBox from '../TwitterBox';
 import TournamentText from '../TournamentText';
@@ -25,15 +25,20 @@ import AllScores from '../Boards/AllScores';
 export interface ScoreProps {
   path: string,
   entries: any[],
-  tournEntries: any[]
+  tournEntries: any[],
 }
 
 
 export default function LayoutScores(props: ScoreProps) {
 
   // SET YOUR EVENT TITLE HERE!
-  const event = 'VRFest 2019'
+  const event = 'Groove Catcher VR 2019'
   // SET THE EVENT TITLE ABOVE!
+
+  // onLoad -> set document.title to 'event'
+  useEffect(() => {
+    document.title = event
+  }, [])
 
   const { entries, tournEntries } = props
 
@@ -49,7 +54,7 @@ export default function LayoutScores(props: ScoreProps) {
       <SeachScore entries={ entries } event={ event }/>
 
             {/* ALL THE SCORES ACCUMULATED SO FAR */}
-      <AllScores entries={ entries } />
+      <AllScores entries={ entries } event={ event }/>
     
     </section>
   );

@@ -114,3 +114,23 @@ export default function TournamentText () {
 *Hint: **h1,h2,h3** are for "HEADERS"*
 
 *Hint: **div**s are for raw-text*
+
+
+## To edit the "TITLE" of the event...
+Travel to gc-leaderboard/src/Layouts/LayoutScores.tsx and
+track down this line of code:
+```js
+// SET YOUR EVENT TITLE HERE!
+const event = 'Groove Catcher VR 2019'
+// SET THE EVENT TITLE ABOVE!
+```
+
+Now just change the value of 'event' to be the TITLE of your choice.
+
+*Keep Text inside of the apostrophe's to prevent any errors.*
+
+```js
+// SET YOUR EVENT TITLE HERE!
+const event = 'YOUR NEW TITLE!'
+// SET THE EVENT TITLE ABOVE!
+```

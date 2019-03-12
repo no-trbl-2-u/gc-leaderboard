@@ -17,6 +17,7 @@ import LayoutSelection from '../Components/Layouts/LayoutSelection';
 import './App2.css';
 
 export default function App() {
+
   return (
     <div className="App">
       {/* <NavBar /> */}

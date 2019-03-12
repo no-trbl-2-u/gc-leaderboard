@@ -3,14 +3,15 @@ import Score from '../Score';
 
 export interface AllScoresProps {
   entries: any[];
+  event: string;
 }
 
 export default function 
   AllScores(props: AllScoresProps): JSX.Element {
-    const { entries } = props
+    const { entries, event } = props
     return (
       <section className="LeaderBoard-container">
-        <header className="LeaderBoard-header">MAGFest 2019 Scoreboard</header>
+        <header className="LeaderBoard-header">{ event }</header>
         {
           scores(entries)
         }

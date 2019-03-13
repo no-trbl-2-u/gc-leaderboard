@@ -68,10 +68,10 @@ async function createTemplate (answers) {
     `
     Name: ${name}
     Score: ${score} points!
-    They ${available ? "are" : "aren't"} available for the tournament.
+    They ${available === true ? "are" : "aren't"} available for the tournament.
     Telephone: ${telephone}
     Email: ${email}
-    They ${mailingList ? "would" : "would not"} like to be on the mailing list.
+    They ${mailingList === true ? "would" : "would not"} like to be on the mailing list.
     `
   )
 }
@@ -84,13 +84,19 @@ async function askQuestions () {
   console.log('Welcome to the Groove Catcher Data Entry Tool');
   console.log('=============================================');
   console.log('');
+
   const entryFull = await askAll();
+  
+  // Create Template
   console.log(await createTemplate(entryFull))
 
+  // Sanity Check results
   const correct = await checkCorrect();
 
+  // Pass along the entry or recursivly ask these questions again
   return (correct === String(true)) ? entryFull : askQuestions();
 }
+
 
 // Run
 async function main () {
@@ -98,7 +104,9 @@ async function main () {
 
   const backUp = [...originalEntries]
   const privateEntry = originalEntries.concat(results)
-  const safeEntry = privateEntry.map(ea => ({name: ea.name, score: ea.score, available: ea.available}))
+  const safeEntry = privateEntry.map(
+    ea => ({name: ea.name, score: ea.score, available: ea.available})
+  )
   
   // Create Backup
   fs.writeFileSync('entries_backup.json', JSON.stringify(backUp))
@@ -111,5 +119,6 @@ async function main () {
 
   console.log("Entry Successfully added!")
 }
+
 
 main();

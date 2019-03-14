@@ -68,10 +68,10 @@ async function createTemplate (answers) {
     `
     Name: ${name}
     Score: ${score} points!
-    They ${available === true ? "are" : "aren't"} available for the tournament.
+    They ${String(available) === "true" ? "are" : "aren't"} available for the tournament.
     Telephone: ${telephone}
     Email: ${email}
-    They ${mailingList === true ? "would" : "would not"} like to be on the mailing list.
+    They ${String(mailingList) === "true" ? "would" : "would not"} like to be on the mailing list.
     `
   )
 }

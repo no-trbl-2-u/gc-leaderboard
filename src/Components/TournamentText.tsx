@@ -4,16 +4,17 @@ export default function TournamentText () {
     return (
       <section className="TournamentText-container">
         <div className="TournamentText">
-          <h2>Leaderboard Contest Today </h2>
-          <h1>Finale at 7pm - $200 in Prizes</h1>
+          <h2>Leaderboard Contest - Friday and Saturday </h2>
+          <h1>Finale is Saturday at 4:30pm</h1>
+	  <h1> $200 in Prizes</h1>
           
-          <div>Play and put your score on the leaderboard by 6.30pm.</div>
+          <div>Play and put your score on the leaderboard by 3.30pm Saturday.</div>
+          <div>Top 5 leaderboard players will compete on two new levels.</div>
+          <h1>Top Prize: Synchrony LEDs - music-reactive lights ($150 value)</h1> 
+
           <div>2d & 3rd places - Groove Catcher T-shirt.</div>
-          <div>Top 5 players will compete at 7pm on a new level.</div>
         
-          <h2>Top Prize: Synchrony LEDs - music-reactive lights ($150 value)</h2> 
-          <h3>T-shirts for top 3</h3>
-          <div>Follow your score: <span className="twitter">vizmoo.com/vrfest</span></div>
+          <div>Follow your score: <span className="twitter">vizmoo.com/sxsw</span></div>
 
         </div>
       </section>

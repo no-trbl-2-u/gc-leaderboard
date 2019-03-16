@@ -2,6 +2,7 @@
 
 # data
 .previousTournaments
+.backups
 
 # dependencies
 /node_modules

@@ -29,7 +29,9 @@ yarn-error.log*
 
 # stuff
 emails.txt
+emails*.csv
 privateEntries.json
+privateEntries*.json
 entries_backup.json
 tournamentEntries_backup.json
 tournamentEntries-private.json

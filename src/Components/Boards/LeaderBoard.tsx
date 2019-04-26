@@ -20,16 +20,9 @@ export default function
 
 // TODO -> Create an "interface for Entry[]
 const scores = (entries: any[]): JSX.Element[] => [...entries]
-  // \ :== (a, b) -> Boolean
   .sort((a, b) => Number(b.score) - Number(a.score))
-
-  // \ :== (obj, Number) -> Boolean
-  .filter((ea, index) => (index <= 10))
-
-  // \ :== obj -> Boolean
-  .filter(ea => ea.available === String(true))
-
-  // \ :== ((String, Number), Number) -> JSX
+  .filter((ea, index) => (index < 10))
+  // .filter(ea => ea.available === String(true))
   .map(
     ({name, score}, index: number) => (
       <Score

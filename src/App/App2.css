@@ -282,7 +282,8 @@ h3 {
 .searchQuestion {
   color: #ffdf64;
 }
-/*          Media Queries       */
+
+/* ____________________Media Queries__________________*/
 @media screen and (max-width: 650px) {
   .Logo-container {
     height: 60px;
@@ -342,3 +343,44 @@ h3 {
     font-size: 8vh;
   }
 } */
+/*___________________________________________*/
+
+/* Animations */
+
+/* Declare */
+.handle {
+  animation: pulse 8s infinite;
+}
+
+.unavailable {
+  animation: pulseColor 4s infinite;
+}
+
+/* Define */
+@keyframes pulse {
+  0% {
+    transform: scale(1.0);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1.0);
+  }
+}
+
+@keyframes pulseColor {
+  0% {
+    color: black;
+  }
+
+  50% {
+    color: rgb(255, 255, 148);
+  }
+
+  100% {
+    color: black;
+  }
+}

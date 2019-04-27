@@ -234,11 +234,11 @@ h3 {
 }
 
 .unavailable {
-  color: lightblue;
+  color: black;
   margin-left: 10px;
-  background-color: rgba(50,50,50, 0.8);
+  background-color: rgba(50,50,50, 1);
   border-radius: 10px;
-  padding: 2px;
+  padding: 4px;
 }
 
 .place {

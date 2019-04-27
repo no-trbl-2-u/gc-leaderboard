@@ -18,7 +18,7 @@ const formatter = originalEntries => {
 const main = () => {
   const formattedEntry = formatter(originalEntries);
   console.log(formattedEntry)
-  fs.writeFileSync('champions.json', JSON.stringify(formattedEntry));
+  fs.writeFileSync('.champions.json', JSON.stringify(formattedEntry));
   console.log("File properly formatted")
 }
 

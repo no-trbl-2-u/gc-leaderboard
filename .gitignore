@@ -35,5 +35,7 @@ privateEntries*.json
 entries_backup.json
 tournamentEntries_backup.json
 tournamentEntries-private.json
+.champions.txt
+.champions.json
 
 CLI-backup.js

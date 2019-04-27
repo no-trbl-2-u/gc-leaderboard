@@ -10,7 +10,7 @@ export default function
     const { entries } = props
     return (
       <section className="LeaderBoard-container">
-        <header className="LeaderBoard-header">Tournament Round 1</header>
+        <header className="LeaderBoard-header">Tournament Winner!</header>
         {
           scores(entries)
         }
@@ -31,7 +31,8 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
         place={ index + 1 }
         name={ name }
         score={ (Number(score)) }
-        top3={(name === 'HellAshes') ? "top" : ""}
+        // Bad Workaround for Winner
+        top3={(name === 'stealthdevil19') ? "top" : ""}
         // Bad Workaround for available
         available={ "true" }
       />

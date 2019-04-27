@@ -1,0 +1,73 @@
+[
+  {
+    "name": "John B v5.0",
+    "score": "99158",
+    "telephone": "See Other Entry",
+    "email": "See Other Entry"
+  },
+  { "name": "stealthdevil19", "score": "97480", "telephone": "", "email": "" },
+  {
+    "name": "Brian",
+    "score": "97406",
+    "telephone": "4782132654",
+    "email": "18brian@gmail.com"
+  },
+  {
+    "name": "YoYo Man Blob",
+    "score": "97385",
+    "telephone": "See Other Entry",
+    "email": "See Other Entry"
+  },
+  {
+    "name": "John B v3.0",
+    "score": "96664",
+    "telephone": "",
+    "email": "JohnBaxtonIII@gmail.com"
+  },
+  {
+    "name": "Matt D.",
+    "score": "96602",
+    "telephone": "3602077201",
+    "email": "Douglas.Matthew.K@gmail.com"
+  },
+  { "name": "Zanya", "score": "96532", "telephone": "5717327151", "email": "" },
+  {
+    "name": "stealthdevil19",
+    "score": "96465",
+    "telephone": "202.422.9620",
+    "email": "jeffreysilverberg212@gmail.com"
+  },
+  { "name": "Yoyo Man Blob", "score": "96401", "telephone": "", "email": "" },
+  {
+    "name": "Yoyo Man Blob",
+    "score": "95970",
+    "telephone": "3017606389",
+    "email": "gftipiani@gmail.com"
+  },
+  { "name": "Amanda M.", "score": "95853", "telephone": "", "email": "" },
+  {
+    "name": "Amanda M.",
+    "score": "95801",
+    "telephone": "3609905003",
+    "email": "wilkins.amanda@gmail.com"
+  },
+  { "name": "John B v4.0", "score": "95168", "telephone": "", "email": "" },
+  {
+    "name": "sprokette",
+    "score": "95061",
+    "telephone": "810.728.0101",
+    "email": "jennapage@gmail.com"
+  },
+  {
+    "name": "Millisaurus Rex",
+    "score": "93738",
+    "telephone": "5136006221",
+    "email": "millisor.ej@gmail.com"
+  },
+  {
+    "name": "okih",
+    "score": "93509",
+    "telephone": "478.213.2654",
+    "email": "18brian@gmail.com"
+  }
+]

@@ -21,13 +21,14 @@ export default function
               .filter(ea => inputValue
                 ? ea.name.toLowerCase().includes(inputValue.toLowerCase())
                 : false )
-              .map(({name, score, place}, index) => (
+              .map(({name, score, place, available}, index) => (
                 <Score
                   key={ index }
                   name={ name }
                   score={ score }
                   top3={""}
                   place={ place }
+                  available={ available }
                 />
               ))
             : <p className="noResults">Results will be shown here</p>

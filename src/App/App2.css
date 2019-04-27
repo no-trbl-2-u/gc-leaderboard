@@ -215,7 +215,6 @@ h3 {
 
   padding: 2px;
   border-radius: 25px;
-
   color: #ffdf64;
 }
 
@@ -232,6 +231,14 @@ h3 {
 
   float: right;
   padding-right: 24px;
+}
+
+.unavailable {
+  color: lightblue;
+  margin-left: 10px;
+  background-color: rgba(50,50,50, 0.8);
+  border-radius: 10px;
+  padding: 2px;
 }
 
 .place {

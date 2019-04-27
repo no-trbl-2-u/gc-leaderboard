@@ -10,7 +10,7 @@ export default function
     const { entries } = props
     return (
       <section className="LeaderBoard-container">
-        <header className="LeaderBoard-header">High Scores (for those available for tournament)</header>
+        <header className="LeaderBoard-header">High Scores</header>
         {
           scores(entries)
         }
@@ -24,13 +24,14 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
   .filter((ea, index) => (index < 10))
   // .filter(ea => ea.available === String(true))
   .map(
-    ({name, score}, index: number) => (
+    ({name, score, available}, index: number) => (
       <Score
         key={ index }
         place={ index + 1 }
         name={ name }
         score={ (Number(score)) }
         top3={(index <= 2) ? "top3" : ""}
+        available={ available }
       />
     )
   )

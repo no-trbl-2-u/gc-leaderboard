@@ -10,7 +10,7 @@ export default function
     const { entries } = props
     return (
       <section className="LeaderBoard-container">
-        <header className="LeaderBoard-header">High Scores</header>
+        <header className="LeaderBoard-header">High Scores (Sunday Only)</header>
         {
           scores(entries)
         }
@@ -30,7 +30,7 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
         place={ index + 1 }
         name={ name }
         score={ (Number(score)) }
-        top3={(index <= 2) ? "top3" : ""}
+        top3={(index < 7 && available === "true") ? "top3" : ""}
         available={ available }
       />
     )

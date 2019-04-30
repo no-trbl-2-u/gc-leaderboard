@@ -32,7 +32,7 @@ export interface ScoreProps {
 export default function LayoutScores(props: ScoreProps) {
 
   // SET YOUR EVENT TITLE HERE!
-  const event = 'Awesomecon 2019'
+  const event = 'Awesomecon 2019 Sunday'
   // SET THE EVENT TITLE ABOVE!
 
   // onLoad -> set document.title to 'event'
@@ -48,7 +48,7 @@ export default function LayoutScores(props: ScoreProps) {
       <TournamentText />
 
             {/* TOURNAMENT LEADERBOARD */}
-      <TournLeaderBoard entries= { tournEntries } />
+      {/* <TournLeaderBoard entries= { tournEntries } /> */}
 
       <LeaderBoard entries={ entries } />
       <SeachScore entries={ entries } event={ event }/>

@@ -16,20 +16,21 @@ export default function
         {
           inputValue !== "" 
             ? 
-              [...entries].sort((a, b) => b.score - a.score)
-              .map((ea, index) => ({...ea, 'place': index + 1 }))
-              .filter(ea => inputValue
-                ? ea.name.toLowerCase().includes(inputValue.toLowerCase())
-                : false )
-              .map(({name, score, place, available}, index) => (
-                <Score
-                  key={ index }
-                  name={ name }
-                  score={ score }
-                  top3={""}
-                  place={ place }
-                  available={ available }
-                />
+              [...entries]
+                .sort((a, b) => b.score - a.score)
+                .map((ea, index) => ({...ea, 'place': index + 1 }))
+                .filter(ea => inputValue
+                  ? ea.name.toLowerCase().includes(inputValue.toLowerCase())
+                  : false )
+                .map(({name, score, place, available}, index) => (
+                  <Score
+                    key={ index }
+                    name={ name }
+                    score={ score }
+                    top3={""}
+                    place={ place }
+                    available={ available }
+                  />
               ))
             : <p className="noResults">Results will be shown here</p>
         }

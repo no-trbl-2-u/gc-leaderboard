@@ -17,6 +17,8 @@ export default function
           <span className="place">{ place }</span>
           <span className="player-score">{ score }</span>
           <span className="player">{ name }</span>
+          
+          {/* Use to show "'unavailable' badge" */}
           {
             available === "true" 
               ? null

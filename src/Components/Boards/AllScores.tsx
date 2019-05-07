@@ -6,13 +6,6 @@ export interface AllScoresProps {
   event: string;
 }
 
-interface IEntry {
-  place: number;
-  name: string;
-  score: number;
-  available: string;
-}
-
 const scores = (entries: IEntry[]): JSX.Element[] => [...entries]
   .sort((a, b) => Number(b.score) - Number(a.score))
   // .filter(ea => ea.score > 40000)

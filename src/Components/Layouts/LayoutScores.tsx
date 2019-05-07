@@ -24,15 +24,15 @@ import AllScores from '../Boards/AllScores';
 
 export interface ScoreProps {
   path: string,
-  entries: any[],
-  tournEntries: any[],
+  entries: IEntry[],
+  tournEntries: IEntry[],
 }
 
 
 export default function LayoutScores(props: ScoreProps) {
 
   // SET YOUR EVENT TITLE HERE!
-  const event = 'Cypher City Spotlight 2019'
+  const event: string = 'Cypher City Spotlight 2019'
   // SET THE EVENT TITLE ABOVE!
 
   // onLoad -> set document.title to 'event'

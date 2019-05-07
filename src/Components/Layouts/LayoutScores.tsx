@@ -17,7 +17,7 @@ import React,{ useEffect } from 'react';
 import TwitterBox from '../TwitterBox';
 import TournamentText from '../TournamentText';
 import LeaderBoard from '../Boards/LeaderBoard';
-import SeachScore from '../SearchScore/SearchScore';
+import SearchScore from '../SearchScore/SearchScore';
 import TournLeaderBoard from '../Boards/TournLeaderBoard';
 import AllScores from '../Boards/AllScores';
 
@@ -32,7 +32,7 @@ export interface ScoreProps {
 export default function LayoutScores(props: ScoreProps) {
 
   // SET YOUR EVENT TITLE HERE!
-  const event = 'Cypher City 2019'
+  const event = 'Cypher City Spotlight 2019'
   // SET THE EVENT TITLE ABOVE!
 
   // onLoad -> set document.title to 'event'
@@ -51,7 +51,7 @@ export default function LayoutScores(props: ScoreProps) {
       {/* <TournLeaderBoard entries= { tournEntries } /> */}
 
       <LeaderBoard entries={ entries } />
-      <SeachScore entries={ entries } event={ event }/>
+      <SearchScore entries={ entries } event={ event }/>
 
             {/* ALL THE SCORES ACCUMULATED SO FAR */}
       <AllScores entries={ entries } event={ event }/>

@@ -97,8 +97,8 @@ h3 {
 .handle {
   height: 100%;
   width: 100%;
-  font-size: 5vh;
-  margin-top: 2.5vh;
+  font-size: 120px;
+  /* margin-top: 2.5vh; */
   color: white;
   text-shadow: 4px 4px 8px rgb(88, 87, 87);
 }

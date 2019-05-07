@@ -32,7 +32,7 @@ export interface ScoreProps {
 export default function LayoutScores(props: ScoreProps) {
 
   // SET YOUR EVENT TITLE HERE!
-  const event = 'Awesomecon 2019 Sunday'
+  const event = 'Cypher City 2019'
   // SET THE EVENT TITLE ABOVE!
 
   // onLoad -> set document.title to 'event'

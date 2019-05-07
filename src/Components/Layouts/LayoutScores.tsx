@@ -24,8 +24,8 @@ import AllScores from '../Boards/AllScores';
 
 export interface ScoreProps {
   path: string,
-  entries: IEntry[],
-  tournEntries: IEntry[],
+  entries: any[],
+  tournEntries: any[],
 }
 
 

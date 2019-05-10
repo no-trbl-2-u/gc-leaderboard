@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const tournEntries = require('./tournamentEntries.json');
+const tournEntries = require('../tournamentEntries.json');
 
 
 const questions = [

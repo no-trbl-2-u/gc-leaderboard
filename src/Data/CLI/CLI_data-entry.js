@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const originalEntries = require('./privateEntries.json');
+const originalEntries = require('../privateEntries.json');
 
 
 const questions = [

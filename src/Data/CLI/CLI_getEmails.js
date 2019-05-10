@@ -17,9 +17,6 @@ const formatter = originalEntries => {
 
 const main = entries => {
   
-  // -> Convert data.string() to an [Array]
-  // console.log(entries.toString().split("["))
-
   // -> Format the [Array] of entries
   const formattedEntry = formatter(entries)
 
@@ -27,10 +24,9 @@ const main = entries => {
   console.log(formattedEntry)
 
   // -> Commit to filesystem
-  fs.writeFileSync('testers.txt', formattedEntry);
+  fs.writeFileSync('emails.txt', formattedEntry);
   console.log("File properly formatted")
 }
-
 
 
 if(pathToEntries !== undefined && absoluteEntries !== []){

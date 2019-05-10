@@ -8,18 +8,14 @@ const absoluteEntries = pathToEntries !== undefined
 
 const formatter = originalEntries => {
   return [...originalEntries]
-    .filter(ea => ea.mailingList === 'true')
-    .filter(ea => ea.email !== '')
-    .map(ea => ({email: ea.email}))
+    .filter(ea => ea.name.toLowerCase().includes("test"))
+    .map(ea => ({name: ea.name, email: ea.email}))
+    .map(ea => {console.log("FULL", ea); return ea})
     .map(ea => [ea.email])
     .join('\n')
 }
 
 const main = entries => {
-  
-  // -> Convert data.string() to an [Array]
-  // console.log(entries.toString().split("["))
-
   // -> Format the [Array] of entries
   const formattedEntry = formatter(entries)
 
@@ -27,8 +23,8 @@ const main = entries => {
   console.log(formattedEntry)
 
   // -> Commit to filesystem
-  fs.writeFileSync('emails.txt', formattedEntry);
-  console.log("File properly formatted")
+  // fs.writeFileSync('testers.txt', formattedEntry);
+  // console.log("File properly formatted")
 }
 
 

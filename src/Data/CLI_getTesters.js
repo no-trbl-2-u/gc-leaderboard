@@ -27,7 +27,7 @@ const main = entries => {
   console.log(formattedEntry)
 
   // -> Commit to filesystem
-  fs.writeFileSync('emails.txt', formattedEntry);
+  fs.writeFileSync('testers.txt', formattedEntry);
   console.log("File properly formatted")
 }
 

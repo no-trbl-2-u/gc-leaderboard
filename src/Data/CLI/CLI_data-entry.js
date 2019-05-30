@@ -7,14 +7,19 @@ const originalEntries = require('../privateEntries.json');
 const questions = [
   {
     type: 'input',
+    name: 'score',
+    message: 'What did they score?',
+    validate: value => (value <= 100000) ? true : 'Impossible Score'
+  },
+  {
+    type: 'input',
     name: 'name',
     message: 'What is their full name?'
   },
   {
     type: 'input',
-    name: 'score',
-    message: 'What did they score?',
-    validate: value => (value <= 100000) ? true : 'Impossible Score'
+    name: 'email',
+    message: 'What is their Email?'
   },
   {
     type: 'list',
@@ -25,12 +30,9 @@ const questions = [
   {
     type: 'input',
     name: 'telephone',
-    message: 'What is their Phone Number?'
-  },
-  {
-    type: 'input',
-    name: 'email',
-    message: 'What is their Email?'
+    message: 'What is their Phone Number?',
+    when: value => String(value.available) === 'true' && String(value.score) > 90000,
+    validate: value => new RegExp(/^([0-9])*$/).test(value) ? true : 'Digits Only'
   },
   {
     type: 'list',
@@ -47,7 +49,7 @@ const sanityCheck = {
     choices: ['true', 'false']
 }
 
-// All encompessing questions
+// All questions
 function askAll () {
   return inquirer
     .prompt(questions)
@@ -61,7 +63,7 @@ function checkCorrect () {
     .then(answers => answers.correct)
 }
 
-// Insanity Checker Template (Expects Promise)
+// Sanity Checker Template (Expects Promise)
 async function createTemplate (answers) {
   const {name, score, available, telephone, email, mailingList} = answers
   return (

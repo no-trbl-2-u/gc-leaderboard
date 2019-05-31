@@ -44,13 +44,7 @@ const questions = [
     type: 'input',
     name: 'telephone',
     message: 'What is their Phone Number?',
-    when: value => {
-      const available = value.available === 'true'
-      const solidRootsAOI = value.song === 'Solid Roots AIO' && value.score > 95000
-      const onTaobhAOI = value.song === 'On Taobh AIO' && value.score > 80000
-
-      return (available && solidRootsAOI) ||(available && onTaobhAOI)
-    },
+    when: value => value.available === 'true',
     validate: value => {
       const isDigitOnly = new RegExp(/^([0-9])*$/).test(value)
       const isCorrectLength = value.length === 10

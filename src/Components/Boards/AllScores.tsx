@@ -6,11 +6,11 @@ export interface AllScoresProps {
   event: string;
 }
 
-const scores = (entries: IEntry[]): JSX.Element[] => [...entries]
+const scores = (entries: any[]): JSX.Element[] => [...entries]
   .sort((a, b) => Number(b.score) - Number(a.score))
   // .filter(ea => ea.score > 40000)
   .map(
-    ({name, score, available}, index: number) => (
+    ({name, score, available, song}, index: number) => (
       <Score
         key={ index }
         place={ index + 1 }
@@ -18,7 +18,8 @@ const scores = (entries: IEntry[]): JSX.Element[] => [...entries]
         score={ (Number(score)) }
         top3={""}
         // TODO: Bad workaround for available
-        available={ "true" }
+        available={ available }
+        song={ song }
       />
     )
   )

@@ -6,6 +6,12 @@ const originalEntries = require('../privateEntries.json');
 
 const questions = [
   {
+    type: 'list',
+    name: 'song',
+    message: 'Which Song was just played?',
+    choices: ['Solid Roots AIO', 'On Taobh AIO']
+  },
+  {
     type: 'input',
     name: 'score',
     message: 'What did they score?',
@@ -31,8 +37,18 @@ const questions = [
     type: 'input',
     name: 'telephone',
     message: 'What is their Phone Number?',
-    when: value => String(value.available) === 'true' && String(value.score) > 90000,
-    validate: value => new RegExp(/^([0-9])*$/).test(value) ? true : 'Digits Only'
+    when: value => {
+      const available = value.available === 'true'
+      const solidRootsAOI = value.song === 'Solid Roots AIO' && value.score > 90000
+      const onTaobhAOI = value.song === 'On Taobh AIO' && value.score > 80000
+
+      return (available && solidRootsAOI) ||(available && onTaobhAOI)
+    },
+    validate: value => {
+      const isDigitOnly = new RegExp(/^([0-9])*$/).test(value)
+      const isCorrectLength = value.length === 10
+      return isDigitOnly && isCorrectLength ? true : 'Incorrect Format' 
+    }
   },
   {
     type: 'list',
@@ -65,15 +81,16 @@ function checkCorrect () {
 
 // Sanity Checker Template (Expects Promise)
 async function createTemplate (answers) {
-  const {name, score, available, telephone, email, mailingList} = answers
+  const {name, score, available, telephone, email, mailingList, song} = answers
   return (
     `
     Name: ${name}
+    Song: ${song}
     Score: ${score} points!
-    They ${String(available) === "true" ? "are" : "aren't"} available for the tournament.
+    They ${available === "true" ? "are" : "aren't"} available for the tournament.
     Telephone: ${telephone}
     Email: ${email}
-    They ${String(mailingList) === "true" ? "would" : "would not"} like to be on the mailing list.
+    They ${mailingList === "true" ? "would" : "would not"} like to be on the mailing list.
     `
   )
 }
@@ -96,7 +113,7 @@ async function askQuestions () {
   const correct = await checkCorrect();
 
   // Pass along the entry or recursivly ask these questions again
-  return (correct === String(true)) ? entryFull : askQuestions();
+  return (correct === 'true') ? entryFull : askQuestions();
 }
 
 
@@ -104,20 +121,25 @@ async function askQuestions () {
 async function main () {
   const results = await askQuestions();
 
-  const backUp = [...originalEntries]
+  // const backUp = originalEntries
   const privateEntry = originalEntries.concat(results)
   const safeEntry = privateEntry.map(
-    ea => ({name: ea.name, score: ea.score, available: ea.available})
+    ea => ({
+      name: ea.name,
+      score: ea.score,
+      available: ea.available,
+      song: ea.song
+    })
   )
   
   // Create Backup
-  fs.writeFileSync('entries_backup.json', JSON.stringify(backUp))
+  fs.writeFileSync('../entries_backup.json', JSON.stringify(originalEntries))
 
   // Publish public scoring info
-  fs.writeFileSync('publicEntries.json', JSON.stringify(safeEntry));
+  fs.writeFileSync('../publicEntries.json', JSON.stringify(safeEntry));
 
   // Finalize private entries
-  fs.writeFileSync('privateEntries.json', JSON.stringify(privateEntry));
+  fs.writeFileSync('../privateEntries.json', JSON.stringify(privateEntry));
 
   console.log("Entry Successfully added!")
 }

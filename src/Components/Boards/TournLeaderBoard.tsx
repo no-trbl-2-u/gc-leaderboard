@@ -25,7 +25,7 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
 
   // \ :== ((String, Number), Number) -> JSX.Element
   .map(
-    ({name, score, available}, index: number) => (
+    ({name, score, available, song}, index: number) => (
       <Score
         key={ index }
         place={ index + 1 }
@@ -35,6 +35,7 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
         top3={(name === 'stealthdevil19') ? "top" : ""}
         // Bad Workaround for available
         available={ "true" }
+        song={ song }
       />
     )
   )

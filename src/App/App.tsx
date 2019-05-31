@@ -14,7 +14,7 @@ import LayoutHome from '../Components/Layouts/LayoutHome';
 import LayoutSelection from '../Components/Layouts/LayoutSelection';
 
 
-import './App2.css';
+import './App.css';
 
 export default function App() {
 

@@ -24,7 +24,7 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
   .filter((ea, index) => (index < 10))
   // .filter(ea => ea.available === String(true))
   .map(
-    ({name, score, available}, index: number) => (
+    ({name, score, available, song}, index: number) => (
       <Score
         key={ index }
         place={ index + 1 }
@@ -32,6 +32,7 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
         score={ (Number(score)) }
         top3={(index < 7 && available === "true") ? "top3" : ""}
         available={ available }
+        song={ song }
       />
     )
   )

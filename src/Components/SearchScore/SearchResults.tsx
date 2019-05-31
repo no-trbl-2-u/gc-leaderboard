@@ -22,7 +22,7 @@ export default function
                 .filter(ea => inputValue
                   ? ea.name.toLowerCase().includes(inputValue.toLowerCase())
                   : false )
-                .map(({name, score, place, available}, index) => (
+                .map(({name, score, place, available, song}, index) => (
                   <Score
                     key={ index }
                     name={ name }
@@ -30,6 +30,7 @@ export default function
                     top3={""}
                     place={ place }
                     available={ available }
+                    song={ song }
                   />
               ))
             : <p className="noResults">Results will be shown here</p>

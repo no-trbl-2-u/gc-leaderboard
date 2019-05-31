@@ -1,15 +1,6 @@
 /*
   Shows the current layout for
     your High Score Page.
-
-  In the Future:
-    * Toggle whether to show:
-      ** <AllScores />
-      ** <TournamentScores />
-      ** <TournamentText />
-    * TournamentText will Render a .md file
-      instead of taking raw input
-    * Will need a prop to define "Event Name"
 */
 
 import React,{ useEffect } from 'react';
@@ -32,8 +23,7 @@ export interface ScoreProps {
 export default function LayoutScores(props: ScoreProps) {
 
   // SET YOUR EVENT TITLE HERE!
-  const event: string = "Philadelphia Fillmore"
-  // SET THE EVENT TITLE ABOVE!
+  const event: string = "DreamHack 2019"
 
   // onLoad -> set document.title to 'event'
   useEffect(() => {

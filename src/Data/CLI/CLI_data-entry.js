@@ -9,7 +9,7 @@ const questions = [
     type: 'list',
     name: 'song',
     message: 'Which Song was just played?',
-    choices: ['Solid Roots AIO', 'On Taobh AIO']
+    choices: ['Solid Roots AIO', 'On Taobh AIO', 'IWF AIO']
   },
   {
     type: 'input',
@@ -23,9 +23,16 @@ const questions = [
     message: 'What is their full name?'
   },
   {
+    type: 'list',
+    name: 'mailingList',
+    message: 'Would they like to be on the mailing list?',
+    choices: ['true', 'false']
+  },
+  {
     type: 'input',
     name: 'email',
-    message: 'What is their Email?'
+    message: 'What is their Email?',
+    when: value => value.mailingList === 'true'
   },
   {
     type: 'list',
@@ -39,7 +46,7 @@ const questions = [
     message: 'What is their Phone Number?',
     when: value => {
       const available = value.available === 'true'
-      const solidRootsAOI = value.song === 'Solid Roots AIO' && value.score > 90000
+      const solidRootsAOI = value.song === 'Solid Roots AIO' && value.score > 95000
       const onTaobhAOI = value.song === 'On Taobh AIO' && value.score > 80000
 
       return (available && solidRootsAOI) ||(available && onTaobhAOI)
@@ -49,12 +56,6 @@ const questions = [
       const isCorrectLength = value.length === 10
       return isDigitOnly && isCorrectLength ? true : 'Incorrect Format' 
     }
-  },
-  {
-    type: 'list',
-    name: 'mailingList',
-    message: 'Would they like to be on the mailing list?',
-    choices: ['true', 'false']
   },
 ];
 

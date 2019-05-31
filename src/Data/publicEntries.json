@@ -1,3 +1,104 @@
 [
-  { "name": "admin", "score": "0", "available": "true" }
+  {
+    "name": "Twitch.TV/jesperoni",
+    "score": "93877",
+    "available": "true",
+    "song": "IWF AIO"
+  },
+  {
+    "name": "Karla",
+    "score": "93011",
+    "available": "true",
+    "song": "Solid Roots AIO"
+  },
+  {
+    "name": "Nathan V.",
+    "score": "92946",
+    "available": "false",
+    "song": "Solid Roots AIO"
+  },
+  {
+    "name": "Andrew B.",
+    "score": "75273",
+    "available": "true",
+    "song": "Solid Roots AIO"
+  },
+  {
+    "name": "Carrotcheeks",
+    "score": "94356",
+    "available": "false",
+    "song": "Solid Roots AIO"
+  },
+  {
+    "name": "Nate B.",
+    "score": "91044",
+    "available": "true",
+    "song": "Solid Roots AIO"
+  },
+  {
+    "name": "KwhiteL",
+    "score": "91501",
+    "available": "true",
+    "song": "Solid Roots AIO"
+  },
+  {
+    "name": "Josh C.",
+    "score": "91659",
+    "available": "true",
+    "song": "IWF AIO"
+  },
+  {
+    "name": "Gus S.",
+    "score": "92215",
+    "available": "true",
+    "song": "IWF AIO"
+  },
+  {
+    "name": "Adam Alami",
+    "score": "90345",
+    "available": "true",
+    "song": "Solid Roots AIO"
+  },
+  {
+    "name": "Jonathon B.",
+    "score": "87630",
+    "available": "true",
+    "song": "Solid Roots AIO"
+  },
+  {
+    "name": "Maxelus",
+    "score": "96630",
+    "available": "true",
+    "song": "Solid Roots AIO"
+  },
+  {
+    "name": "Mighty Mary!",
+    "score": "91486",
+    "available": "true",
+    "song": "IWF AIO"
+  },
+  {
+    "name": "Ryan T",
+    "score": "82469",
+    "available": "false",
+    "song": "Solid Roots AIO"
+  },
+  {
+    "name": "CouchCapades",
+    "score": "89796",
+    "available": "true",
+    "song": "IWF AIO"
+  },
+  {
+    "name": "Evil Mr. Buttonz",
+    "score": "83620",
+    "available": "true",
+    "song": "Solid Roots AIO"
+  },
+  {
+    "name": "Maxx",
+    "score": "97148",
+    "available": "true",
+    "song": "Solid Roots AIO"
+  }
 ]

@@ -89,7 +89,8 @@ h3 {
 .handle {
   height: 100%;
   width: 100%;
-  font-size: 110px;
+  margin-top: 40px;
+  font-size: 80px;
   /* margin-top: 2.5vh; */
   color: white;
   text-shadow: 4px 4px 8px rgb(88, 87, 87);
@@ -175,7 +176,7 @@ h3 {
   width: 100%;
   text-align: center;
 
-  background: linear-gradient(black, #363636);
+  /* background: linear-gradient(black, #363636); */
   background-color: black;
   object-fit: contain;
 }
@@ -224,7 +225,7 @@ h3 {
   padding: 2px;
   border-radius: 25px;
   color: #ffdf64;
-  margin-left: 16vw;
+  margin-left: 3vw;
 }
 
 .player-score {

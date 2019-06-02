@@ -48,8 +48,9 @@ const questions = [
     validate: value => {
       const isDigitOnly = new RegExp(/^([0-9])*$/).test(value)
       const isCorrectLength = value.length === 10
-      return isDigitOnly && isCorrectLength ? true : 'Incorrect Format' 
-    }
+      return isDigitOnly && isCorrectLength ? true : 'Incorrect Format'
+    },
+    default: "1234567890"
   },
 ];
 

@@ -4,6 +4,7 @@ interface ITournamentText {
   event: string;
 }
 
+// TODO: Build "<ActiveTournament/>"
 export default function TournamentText (props: ITournamentText) {
   return (
     <section className="TournamentText-container">
@@ -12,15 +13,16 @@ export default function TournamentText (props: ITournamentText) {
         <h1>{ props.event }</h1>
         
         {/* Details for Tournament Placement */}
-        <h2>Top 10 Scores will participate in a showdown of two of our most difficult songs on Saturday 5PM</h2>
-        <div>Must maintain top 5 by Saturday at 4pm</div>
-        
+        <h2>Maintain the High Score by 5pm and win a free Groove Catcher T-Shirt</h2>
+        <i>
+          <h3>*Must be back here by 5:30 to claim T-Shirt otherwise it will be given to the next highest score*</h3>
+        </i>
         {/* First Prize */}
-        <h2>First Prize will receive Synchrony LED lights</h2>
+        {/* <h2>First Prize will receive Synchrony LED lights</h2>
         <div>The world's most advanced neural synch technology ($150 value)</div>
-        
+         */}
         {/* Second and Third Prize */}
-        <h3>Second and Third Place will receive Groove Catcher T-Shirts</h3>
+        {/* <h3>Second and Third Place will receive Groove Catcher T-Shirts</h3> */}
         
         {/* Final note */}
         <div>Follow your score: <span className="twitter">vizmoo.com</span></div>

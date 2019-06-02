@@ -77,7 +77,7 @@ async function main () {
 
   // Finalize entries
   // fs.writeFileSync('tournamentEntries-private.json', JSON.stringify(privateEntry));
-  fs.writeFileSync('tournamentEntries.json', JSON.stringify(publicEntry));
+  fs.writeFileSync('../tournamentEntries.json', JSON.stringify(publicEntry));
 
   console.log("Entry Successfully added!")
 }

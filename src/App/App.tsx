@@ -13,7 +13,6 @@ import LayoutScores from '../Components/Layouts/LayoutScores';
 import LayoutHome from '../Components/Layouts/LayoutHome';
 import LayoutSelection from '../Components/Layouts/LayoutSelection';
 
-
 import './App.css';
 
 export default function App() {
@@ -23,7 +22,6 @@ export default function App() {
       {/* <NavBar /> */}
       <Router>
         {/* Temporary Routes until pages are done  */}
-        <LayoutHome path="/home" />
         <LayoutSelection path="/selection" />
         <LayoutScores
           path="/"

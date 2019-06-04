@@ -22,8 +22,12 @@ export default function
 const scores = (entries: any[]): JSX.Element[] => [...entries]
   .sort((a, b) => Number(b.score) - 
   Number(a.score))
-  .filter((ea, index) => (index < 15))
-  // .filter(ea => ea.available === String(true))
+
+  // Quantity of Scores
+  .filter((ea, index) => (index < 5))
+  
+  // Filter out Unavailable
+  // .filter(ea => ea.available === "true")
   .map(
     ({name, score, available, song}, index: number) => (
       <Score
@@ -31,7 +35,7 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
         place={ index + 1 }
         name={ name }
         score={ (Number(score)) }
-        top3={(index < 12 && available === "true") ? "top3" : ""}
+        top3={(index < 1 && available === "true") ? "top3" : ""}
         available={ available }
         song={ song }
       />

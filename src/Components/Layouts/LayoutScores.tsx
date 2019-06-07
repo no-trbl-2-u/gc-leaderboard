@@ -23,7 +23,7 @@ export interface ScoreProps {
 export default function LayoutScores(props: ScoreProps) {
 
   // SET YOUR EVENT TITLE HERE!
-  const event: string = "DreamHack Dallas 2019"
+  const event: string = "AnimeNext NJ 2019"
 
   // onLoad -> set document.title to 'event'
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function LayoutScores(props: ScoreProps) {
       <TournamentText event={ event } />
 
             {/* TOURNAMENT LEADERBOARD */}
-      <TournLeaderBoard entries= { tournEntries } />
+      {/* <TournLeaderBoard entries= { tournEntries } /> */}
 
       <LeaderBoard entries={ entries } />
       <SearchScore entries={ entries } event={ event }/>

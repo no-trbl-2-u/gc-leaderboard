@@ -8,12 +8,12 @@ export interface AllScoresProps {
 
 const scores = (entries: any[]): JSX.Element[] => [...entries]
   .sort((a, b) => Number(b.score) - Number(a.score))
-  .filter((ea, index) => index >= 5)
+  .filter((ea, index) => index >= 10)
   .map(
     ({name, score, available, song}, index: number) => (
       <Score
         key={ index }
-        place={ index + 6 }
+        place={ index + 11 }
         name={ name }
         score={ (Number(score)) }
         top3={""}

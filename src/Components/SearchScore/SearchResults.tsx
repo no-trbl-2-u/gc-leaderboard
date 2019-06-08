@@ -35,7 +35,7 @@ export default function
     const { inputValue, entries, event } = props
     return (
       <div className="LeaderBoard-container">
-        <div className="out-of"> (Out of <span className="twitter">{ entries.length }</span> players at { event })</div>
+        <div className="out-of"> (Out of <span className="twitter">{ entries.filter(ea => ea.score > 0).length }</span> players at { event })</div>
         {
           inputValue !== "" 
             ? genSearchResults(entries, inputValue)

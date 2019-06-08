@@ -9,12 +9,12 @@ export interface LeaderBoardProps {
 const scores = (entries: any[]): JSX.Element[] => [...entries]
   // Sort Scores
   .sort((a, b) => Number(b.score) - Number(a.score))
-  
-  // Quantity of Scores
-  .filter((ea, index) => (index < 10))
-  
+
   // Filter out Unavailable
   // .filter(ea => ea.available === "true")
+
+  // Quantity of Scores
+  .filter((ea, index) => (index < 10))
   
   // Create Components
   .map(

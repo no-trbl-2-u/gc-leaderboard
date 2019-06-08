@@ -5,7 +5,7 @@ const formatter = originalEntries => {
   return [...originalEntries]
     .sort((a, b) => b.score - a.score)
     .filter(ea => ea.available === "true")
-    // .filter(ea => String(ea.telephone) !== '1234567890' || String(ea.telephone) !== 'undefined')
+    .filter(ea => String(ea.telephone) !== '1234567890' || String(ea.telephone) !== 'undefined')
     .filter((ea, idx) => idx <= 30)
     .map(({name, score, telephone}) => {
       return ({
@@ -16,12 +16,12 @@ const formatter = originalEntries => {
     })
 };
 
-const main = () => {
-  const formattedEntry = formatter(originalEntries);
-  console.log(formattedEntry)
-  fs.writeFileSync('.champions.json', JSON.stringify(formattedEntry));
-  console.log("File properly formatted")
-}
+// const main = () => {
+//   const formattedEntry = formatter(originalEntries);
+//   console.log(formattedEntry)
+//   fs.writeFileSync('.champions.json', JSON.stringify(formattedEntry));
+//   console.log("File properly formatted")
+// }
 
 // Testing
 [...originalEntries]

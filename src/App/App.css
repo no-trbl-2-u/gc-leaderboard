@@ -163,8 +163,9 @@ h3 {
 
 .LeaderBoard-header {
   font-size: 32px;
+  text-shadow: 3px 3px 2px rgb(197, 197, 197);
 
-  padding: 16px 0;
+  padding: 16px 0 24px;
 
   width: 100%;
   border-radius: 25px;
@@ -194,13 +195,17 @@ h3 {
   width: 80%;
 
   background-color: black;
+
+  text-align: center;
 }
 
-.song {
+
+/* Song Choice */
+/* .song {
   color: white;
   font-size: 18px;
   margin-left: 2vw;
-}
+} */
 
 .top {
   border: 0.2vh solid purple;

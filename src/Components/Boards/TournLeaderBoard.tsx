@@ -3,14 +3,15 @@ import Score from '../Score';
 
 export interface LeaderBoardProps {
   entries: any[];
+  event: string;
 }
 
 export default function 
   LeaderBoard(props: LeaderBoardProps): JSX.Element {
-    const { entries } = props
+    const { entries, event } = props
     return (
       <section className="LeaderBoard-container">
-        <header className="LeaderBoard-header">DreamHack Dallas 2019 Tournament Winner!</header>
+        <header className="LeaderBoard-header">{ event } Final Round</header>
         {
           scores(entries)
         }
@@ -32,7 +33,7 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
         name={ name }
         score={ (Number(score)) }
         // Bad Workaround for Winner
-        top3={(name === 'Lunar Vanguard') ? "top" : ""}
+        top3={(name === 'Tasca') ? "top" : ""}
         // Bad Workaround for available
         available={ "true" }
         song={ song }

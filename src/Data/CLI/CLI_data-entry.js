@@ -52,6 +52,18 @@ const questions = [
     },
     default: "1234567890"
   },
+  {
+    type: 'input',
+    name: 'zip',
+    message: 'What is their zip code',
+    validate: value => {
+      const isDigitOnly = new RegExp(/^([0-9])*$/).test(value)
+      const isCorrectLength = value.length === 5
+      return isDigitOnly && isCorrectLength ? true : 'Incorrect Format'
+    },
+    default: "00000"
+  },
+
 ];
 
 const sanityCheck = {
@@ -76,8 +88,7 @@ function checkCorrect () {
 }
 
 // Sanity Checker Template (Expects Promise)
-async function createTemplate (answers) {
-  const {name, score, available, telephone, email, mailingList, song} = answers
+async function createTemplate ({name, score, available, telephone, email, mailingList, song, zip}) {
   return (
     `
     Name: ${name}
@@ -85,6 +96,7 @@ async function createTemplate (answers) {
     Score: ${score} points!
     They ${available === "true" ? "are" : "aren't"} available for the tournament.
     Telephone: ${telephone}
+    Zip: ${zip}
     Email: ${email}
     They ${mailingList === "true" ? "would" : "would not"} like to be on the mailing list.
     `

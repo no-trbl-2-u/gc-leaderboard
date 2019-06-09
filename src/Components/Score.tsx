@@ -22,11 +22,11 @@ export default function
         {/* <span className="song">{ song }</span> */}
         
         {/* Use to show "'unavailable' badge" */}
-        {
+        {/* {
           available === "true" 
             ? null
             : <span className="unavailable">Unavailable</span>
-        }
+        } */}
       </div>
     );
 }

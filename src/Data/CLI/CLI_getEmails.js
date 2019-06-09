@@ -1,9 +1,9 @@
 const fs = require('fs')
 const path = require('path')
-const pathToEntries = process.argv[2]
+const pathToEntries = require('../privateEntries')
 
 const absoluteEntries = pathToEntries !== undefined 
-  ? require(path.join(__dirname, pathToEntries))
+  ? require(path.join(__dirname, '../privateEntries.json'))
   : [] 
 
 const formatter = originalEntries => {
@@ -21,7 +21,7 @@ const main = entries => {
   const formattedEntry = formatter(entries)
 
   // -> Double Check Work
-  console.log(formattedEntry)
+  // console.log(formattedEntry)
 
   // -> Commit to filesystem
   fs.writeFileSync('../emails.txt', formattedEntry);

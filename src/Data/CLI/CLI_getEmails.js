@@ -1,10 +1,27 @@
 const fs = require('fs')
 const path = require('path')
-const pathToEntries = require('../privateEntries')
+const optionalDirectory = process.argv[2]
+const { listDirectories } = require('../../utilities.js')
 
-const absoluteEntries = pathToEntries !== undefined 
-  ? require(path.join(__dirname, '../privateEntries.json'))
-  : [] 
+const listOfDirectories = listDirectories(path.join(__dirname, '../.previousTournaments'))
+
+const determinePath = optDir => {
+  if(!optionalDirectory){
+    return require(path.join(__dirname, `../privateEntries`))
+  }
+  if(listOfDirectories.includes(optionalDirectory)){
+    return require(path.join(__dirname, `../.previousTournaments/${optionalDirectory}/privateEntries`))
+  }
+  if(optionalDirectory === '-list' || optionalDirectory === '-l'){
+    console.log('==================================================')
+    console.log('List of All Current Directories')
+    console.log('==================================================')
+    console.log(listOfDirectories)
+    return []
+  }else{
+    console.log("Directory Doesn't Exist")
+  }
+}
 
 const formatter = originalEntries => {
   return [...originalEntries]
@@ -21,16 +38,11 @@ const main = entries => {
   const formattedEntry = formatter(entries)
 
   // -> Double Check Work
-  // console.log(formattedEntry)
+  console.log(formattedEntry)
 
   // -> Commit to filesystem
-  fs.writeFileSync('../emails.txt', formattedEntry);
-  console.log("File properly formatted")
+  // fs.writeFileSync('../emails.txt', formattedEntry);
+  // console.log("File properly formatted")
 }
 
-
-if(pathToEntries !== undefined && absoluteEntries !== []){
-  main(absoluteEntries)
-}else{
-  throw new Error("File does not exist")
-}
+main(determinePath(optionalDirectory))

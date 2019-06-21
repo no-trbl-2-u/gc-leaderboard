@@ -1,0 +1,4 @@
+// TODO: use questionaire API to create list from Directories to select which convention to getEmails from
+// TODO: create switch statement for various flags
+// TODO: Create single CLI tool that used flags/commands/args
+// TODO: Create script to create backup Dir, copy files, empty files down to single admin:0

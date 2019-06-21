@@ -2,9 +2,10 @@ const fs = require('fs')
 const path = require('path')
 const optionalDirectory = process.argv[2]
 const { listDirectories } = require('../../utilities.js')
-
 const listOfDirectories = listDirectories(path.join(__dirname, '../.previousTournaments'))
 
+
+// determinePath :: String -> Either([Entries], [])
 const determinePath = optDir => {
   if(!optionalDirectory){
     return require(path.join(__dirname, `../privateEntries`))
@@ -20,9 +21,11 @@ const determinePath = optDir => {
     return []
   }else{
     console.log("Directory Doesn't Exist")
+    return []
   }
 }
 
+// formatter :: [Entries] -> [Entries]
 const formatter = originalEntries => {
   return [...originalEntries]
     .filter(ea => ea.mailingList === 'true')
@@ -32,6 +35,7 @@ const formatter = originalEntries => {
     .join('\n')
 }
 
+// main :: [Entries] -> Either(IO(), WriterMonad())
 const main = entries => {
   
   // -> Format the [Array] of entries

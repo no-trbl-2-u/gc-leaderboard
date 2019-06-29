@@ -14,7 +14,7 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
   // .filter(ea => ea.available === "true")
 
   // Quantity of Scores
-  .filter((ea, index) => (index < 10))
+  .filter((ea, index) => index < 10 && ea.score > 0)
   
   // Create Components
   .map(

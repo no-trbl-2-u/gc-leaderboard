@@ -23,7 +23,7 @@ export interface ScoreProps {
 export default function LayoutScores(props: ScoreProps) {
 
   // SET YOUR EVENT TITLE HERE!
-  const event: string = "AnimeNext NJ 2019"
+  const event: string = "Philly Esports 2019"
 
   // onLoad -> set document.title to 'event'
   useEffect(() => {
@@ -37,13 +37,13 @@ export default function LayoutScores(props: ScoreProps) {
       <TwitterBox />
       <TournamentText event={ event } />
 
-            {/* TOURNAMENT LEADERBOARD */}
+        {/* TOURNAMENT LEADERBOARD */}
       {/* <TournLeaderBoard entries={ tournEntries } event={ event } /> */}
 
       <LeaderBoard entries={ entries } />
       <SearchScore entries={ entries } event={ event }/>
 
-            {/* ALL THE SCORES ACCUMULATED SO FAR */}
+        {/* ALL THE SCORES ACCUMULATED SO FAR */}
       <AllScores entries={ entries } event={ event }/>
     
     </section>

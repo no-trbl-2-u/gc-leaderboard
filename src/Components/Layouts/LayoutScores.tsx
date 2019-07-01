@@ -38,7 +38,7 @@ export default function LayoutScores(props: ScoreProps) {
       <TournamentText event={ event } />
 
         {/* TOURNAMENT LEADERBOARD */}
-      {/* <TournLeaderBoard entries={ tournEntries } event={ event } /> */}
+      <TournLeaderBoard entries={ tournEntries } event={ event } />
 
       <LeaderBoard entries={ entries } />
       <SearchScore entries={ entries } event={ event }/>

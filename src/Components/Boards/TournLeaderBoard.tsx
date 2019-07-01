@@ -11,7 +11,7 @@ export default function
     const { entries, event } = props
     return (
       <section className="LeaderBoard-container">
-        <header className="LeaderBoard-header">{ event } Final Round</header>
+        <header className="LeaderBoard-header">{ event } Tournament Winner!!! </header>
         {
           scores(entries)
         }
@@ -24,6 +24,9 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
 // \ :== (a, b) -> Boolean
   .sort((a, b) => Number(b.score) - Number(a.score))
 
+// \ :== Ord a => [Entries] -> (a -> Bool) -> [Entries]
+  .filter(ea => ea.score > 0)
+
   // \ :== ((String, Number), Number) -> JSX.Element
   .map(
     ({name, score, available, song}, index: number) => (
@@ -33,7 +36,7 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
         name={ name }
         score={ (Number(score)) }
         // Bad Workaround for Winner
-        top3={(name === 'Tasca') ? "top" : ""}
+        top3={(name === 'Niki') ? "top" : ""}
         // Bad Workaround for available
         available={ "true" }
         song={ song }

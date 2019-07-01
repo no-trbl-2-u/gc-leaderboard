@@ -24,8 +24,9 @@ TournamentText (props: ITournamentText) {
         {/* <i><h3>*Must be back here by 4:30 to claim T-Shirt otherwise it will be given to the next highest score*</h3></i> */}
 
         {/* First Prize */}
-        <h2>First Prize will receive Synchrony LED lights</h2>
-        <div>The world's most advanced neural synch technology ($150 value)</div>
+        {/* <h2>First Prize will receive Synchrony LED lights</h2> */}
+        <h2>First Prize will be a $50 Amazon Gift Card</h2>
+        {/* <div>The world's most advanced neural synch technology ($150 value)</div> */}
        
         {/* Second and Third Prize */}
         <h3>Second and Third Place will receive Groove Catcher T-Shirts</h3>

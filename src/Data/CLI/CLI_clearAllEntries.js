@@ -1,5 +1,5 @@
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs');
+
 
 const publicEntries = [{
   "name": "admin",
@@ -9,11 +9,14 @@ const publicEntries = [{
 }];
 
 const entries_backup = [{
-  "name": "admin",
+  "song": "Solid Roots AIO",
   "score": "0",
+  "name": "admin",
+  "mailingList": "false",
+  "email": "",
   "available": "false",
-  "song": "Solid Roots AIO"
-}];
+  "telephone": "0",
+  "zip": ""}];;
 
 const privateEntries = [{
   "song": "Solid Roots AIO",
@@ -27,18 +30,17 @@ const privateEntries = [{
 
 const tournamentEntries = [{"name":"admin", "score":0}];
 
-// TODO:
-// Create [{Entry}] forEach->
-  // public     -- ../publicEntries.json
-  // private    -- ../privateEntries.json
-  // backup     -- ../entries_backup.json
-  // tournament -- ../tournamentEntries.json
-// Write to filesystem each file in src/Data
-
 // main :: WriterIO()
 const main = () => {
-  
-  // -> Commit to filesystem
-  // fs.writeFileSync('../emails.txt', formattedEntry);
-  console.log("Files rewritten")
+  fs.writeFileSync('../entries_backup.json', JSON.stringify(entries_backup))
+
+  fs.writeFileSync('../privateEntries.json', JSON.stringify(privateEntries));
+  fs.writeFileSync('../publicEntries.json', JSON.stringify(publicEntries));
+  fs.writeFileSync('../tournamentEntries.json', JSON.stringify(tournamentEntries));
+
+  console.log("==============");
+  console.log("Files Emptied");
+  console.log("==============");
 }
+
+main();

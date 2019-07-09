@@ -1,5 +1,4 @@
 // Pseudocode
-// TODO: Complete Steps
 /*
 
   Step One: Collect all directories in this folder

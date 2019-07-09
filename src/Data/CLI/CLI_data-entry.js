@@ -35,6 +35,18 @@ const questions = [
     when: value => value.mailingList === 'true'
   },
   {
+    type: 'input',
+    name: 'zip',
+    message: 'What is their zip code',
+    when: value => value.mailingList === 'true',
+    validate: value => {
+      const isDigitOnly = new RegExp(/^([0-9])*$/).test(value)
+      const isCorrectLength = value.length === 5
+      return isDigitOnly && isCorrectLength ? true : 'Incorrect Format'
+    },
+    default: "00000"
+  },
+  {
     type: 'list',
     name: 'available',
     message: 'Are they available to participate in the tournament?',
@@ -51,19 +63,7 @@ const questions = [
       return isDigitOnly && isCorrectLength ? true : 'Incorrect Format'
     },
     default: "1234567890"
-  },
-  {
-    type: 'input',
-    name: 'zip',
-    message: 'What is their zip code',
-    validate: value => {
-      const isDigitOnly = new RegExp(/^([0-9])*$/).test(value)
-      const isCorrectLength = value.length === 5
-      return isDigitOnly && isCorrectLength ? true : 'Incorrect Format'
-    },
-    default: "00000"
-  },
-
+  }
 ];
 
 const sanityCheck = {

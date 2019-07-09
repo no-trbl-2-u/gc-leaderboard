@@ -1,4 +1,13 @@
-// TODO: use questionaire API to create list from Directories to select which convention to getEmails from
 // TODO: create switch statement for various flags
 // TODO: Create single CLI tool that used flags/commands/args
 // TODO: Create script to create backup Dir, copy files, empty files down to single admin:0
+
+// TODO: MAIN CLI
+// TODO: -> Create Questionaire to pick various tools or get help
+// TODO:    -> Create Entry (Default selection)
+// TODO:    -> List Current Directories
+// TODO:    -> Backup Current Scores to make new Directory
+// TODO:    -> Get all emails from specific Event/Directory
+// TODO:    -> Get n top Scores w/ availability (name, score, Phone, email)
+// TODO: -> Create switch statement for various options for flags
+// TODO:    -> Match all options from Questionaire

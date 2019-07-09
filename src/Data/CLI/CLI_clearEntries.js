@@ -31,9 +31,8 @@ const privateEntries = [{
 const tournamentEntries = [{"name":"admin", "score":0}];
 
 // main :: WriterIO()
-const main = () => {
+const clearEntries = () => {
   fs.writeFileSync('../entries_backup.json', JSON.stringify(entries_backup))
-
   fs.writeFileSync('../privateEntries.json', JSON.stringify(privateEntries));
   fs.writeFileSync('../publicEntries.json', JSON.stringify(publicEntries));
   fs.writeFileSync('../tournamentEntries.json', JSON.stringify(tournamentEntries));
@@ -43,4 +42,4 @@ const main = () => {
   console.log("==============");
 }
 
-main();
+module.exports = clearEntries

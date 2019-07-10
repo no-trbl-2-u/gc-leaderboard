@@ -14,7 +14,8 @@ const {
   LIST_DIRECTORIES,
   BACKUP_AND_CLEAR,
   GATHER_EMAILS,
-  GATHER_CHAMPIONS
+  GATHER_CHAMPIONS,
+  FORBIDDEN_CHARACTERS
 } = require('./Tools/CONSTANTS');
 
 /*
@@ -61,14 +62,38 @@ const optionQuestions = [
     name: 'newDirectory',
     message: 'What is the name of the current tournament? (In ALL CAPS, no spaces)',
     when: options => options.action === BACKUP_AND_CLEAR,
-    validate: inp => [...inp].filter(eachLetter => eachLetter.toUpperCase()) === inp
+    validate: inp => [...inp]
+      .filter(letter => 
+        letter === letter.toUpperCase()
+        && !FORBIDDEN_CHARACTERS.includes(letter)       
+      ).join("") === inp
+        ? true 
+        : 'All Upper Case and no forbidden characters (:, ", /, \\, |, ?, ., *, and spaces.'
   }
 ];
+
 
 function askForAction () {
   return inquirer
     .prompt(optionQuestions)
     .then(answers => answers)
+}
+
+async function doubleCheckDirectoryName(directoryPath) {
+  const sanityCheck = {
+    type: 'list',
+    name: 'correctPath',
+    message: `Is ${directoryPath} correct?`,
+    choices: ['true', 'false']
+  };
+
+  function askSanityCheck() {
+    return inquirer
+      .prompt(sanityCheck)
+      .then(result => result.correctPath);
+  }
+
+  return await askSanityCheck(); 
 }
 
 async function runAction(option) {
@@ -85,7 +110,14 @@ async function runAction(option) {
       break;
 
     case BACKUP_AND_CLEAR:
+      const sanityResult = await doubleCheckDirectoryName(option.newDirectory);
       
+      if(sanityResult === 'true') {
+        backupCurrentEntries(option.newDirectory);
+        clearCurrentEntries();
+      }else{
+        return await askForAction();
+      }
       break;
     
     default:

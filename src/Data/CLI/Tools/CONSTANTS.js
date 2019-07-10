@@ -6,11 +6,14 @@ const BACKUP_AND_CLEAR = 'Backup and Clear current entries';
 const GATHER_EMAILS = 'Gather Emails';
 const GATHER_CHAMPIONS = 'Get Champions from current entries';
 
+const FORBIDDEN_CHARACTERS = [' ', '.', '/', '\\', '?','"', '<', '>', '|', '*'];
+
 module.exports = {
   CREATE_ENTRY,
   CREATE_TOURNAMENT_ENTRY,
   LIST_DIRECTORIES,
   BACKUP_AND_CLEAR,
   GATHER_EMAILS,
-  GATHER_CHAMPIONS
-}
+  GATHER_CHAMPIONS,
+  FORBIDDEN_CHARACTERS
+};

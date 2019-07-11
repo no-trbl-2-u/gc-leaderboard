@@ -18,6 +18,15 @@ const {
   FORBIDDEN_CHARACTERS
 } = require('./Tools/CONSTANTS');
 
+// TODO: Write inside utility.js a utility importer for all entries
+// TODO:   -> to make database migration much easier
+
+/* 
+  TODO: rewrite GATHER_EMAILS
+  TODO: rewrite GATHER_CHAMPIONS
+  TODO: rewrite CREATE_TOURNAMENT_ENTRY
+*/
+
 /*
 TODO: flags:
   TODO: -ls (List Directories)
@@ -100,28 +109,45 @@ async function runAction(option) {
   console.log(option)
 
   switch(option.action){
-    // Create Entry -- Finished
+    //____________________________________________________________________________
+
     case CREATE_ENTRY:
       const [originalEntries, publicEntry, privateEntry] = await createEntry();
-      // UNCOMMENT WHEN MERGED
-      // fs.writeFileSync('../entries_backup.json', JSON.stringify(originalEntries))
-      // fs.writeFileSync('../publicEntries.json', JSON.stringify(publicEntry));
-      // fs.writeFileSync('../privateEntries.json', JSON.stringify(privateEntry));
+
+      fs.writeFileSync('../entries_backup.json', JSON.stringify(originalEntries))
+      fs.writeFileSync('../publicEntries.json', JSON.stringify(publicEntry));
+      fs.writeFileSync('../privateEntries.json', JSON.stringify(privateEntry));
+
       break;
+
+    //____________________________________________________________________________
 
     case BACKUP_AND_CLEAR:
       const sanityResult = await doubleCheckDirectoryName(option.newDirectory);
-      
+
       if(sanityResult === 'true') {
         backupCurrentEntries(option.newDirectory);
         clearCurrentEntries();
       }else{
-        return await askForAction();
+        await main();
       }
+
       break;
-    
+
+    //____________________________________________________________________________
+    case LIST_DIRECTORIES:
+
+      console.log(currentDirectories);
+
+      break;
+
+    //____________________________________________________________________________
+
     default:
+      console.log("Impossible Action")
       break;
+
+    //____________________________________________________________________________
   }
 }
 

@@ -38,23 +38,24 @@ function clearCurrentEntries() {
   console.log("==============");
 }
 
-// backupCurrentEntries :: String -> WriteDirectory IO()
+// backupCurrentEntries :: String -> WriteDirectory IO()S
 function backupCurrentEntries(newDirectory) {
-  // Current Entries
+  // Current Entries (Path based from THIS directory)
   const currentEntries_Backup = require('../../entries_backup.json');
   const currentPublicEntries = require('../../publicEntries.json');
   const currentPrivateEntries = require('../../privateEntries.json');
   const currentTournamentEntries = require('../../tournamentEntries.json');
   
   // New Directory
-  fs.mkdirSync(`../../previousTournaments/${newDirectory}`);
+  fs.mkdirSync(`../previousTournaments/${newDirectory}`);
 
-  // Backup All Entries into new directory
-  fs.writeFileSync(`../../previousTournaments/${newDirectory}/entries_backup.json`, JSON.stringify(currentEntries_Backup));
-  fs.writeFileSync(`../../previousTournaments/${newDirectory}/publicEntries.json`, JSON.stringify(currentPublicEntries));
-  fs.writeFileSync(`../../previousTournaments/${newDirectory}/privateEntries.json`, JSON.stringify(currentPrivateEntries));
-  fs.writeFileSync(`../../previousTournaments/${newDirectory}/tournamentEntries.json`, JSON.stringify(currentTournamentEntries));
+  // Backup All Entries into new directory (Path based on Directory from ../CLI_main.js())
+  fs.writeFileSync(`../previousTournaments/${newDirectory}/entries_backup.json`, JSON.stringify(currentEntries_Backup));
+  fs.writeFileSync(`../previousTournaments/${newDirectory}/publicEntries.json`, JSON.stringify(currentPublicEntries));
+  fs.writeFileSync(`../previousTournaments/${newDirectory}/privateEntries.json`, JSON.stringify(currentPrivateEntries));
+  fs.writeFileSync(`../previousTournaments/${newDirectory}/tournamentEntries.json`, JSON.stringify(currentTournamentEntries));
 }
+
 
 module.exports = {
   clearCurrentEntries,

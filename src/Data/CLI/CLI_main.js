@@ -3,11 +3,14 @@ const path = require('path');
 const inquirer = require('inquirer');
 const { listDirectories } = require('../utilities');
 const flag = process.argv[2];
+
 const currentPrivateEntries = require('../privateEntries.json');
 
 // From Tools
 const { createEntry } = require('./Tools/CLI_data-entry');
 const { clearCurrentEntries, backupCurrentEntries } = require('./Tools/CLI_backUpAndClearEntries');
+const { stripEmailsFromSource } = require('./Tools/CLI_gatherEmails');
+const { gatherChampions } = require('./Tools/CLI_gatherChampions');
 const {
   CREATE_ENTRY,
   CREATE_TOURNAMENT_ENTRY,
@@ -22,13 +25,12 @@ const {
 // TODO:   -> to make database migration much easier
 
 /* 
-  TODO: rewrite GATHER_EMAILS
-  TODO: rewrite GATHER_CHAMPIONS
   TODO: rewrite CREATE_TOURNAMENT_ENTRY
 */
 
 /*
 TODO: flags:
+  TODO: -h/-help (List all Flags)
   TODO: -ls (List Directories)
   TODO: -e (Create Entry)
   TODO: -backup (backup Entries & clear)
@@ -143,6 +145,28 @@ async function runAction(option) {
 
     //____________________________________________________________________________
 
+    case GATHER_EMAILS:
+
+      const { directoryChoice } = option;
+
+      if(directoryChoice === 'Current Tournament') {
+        console.log(stripEmailsFromSource(currentPrivateEntries))
+      }else{
+        const specifiedEntries = require(`../previousTournaments/${directoryChoice}/privateEntries.json`);
+        console.log(stripEmailsFromSource(specifiedEntries));
+      }
+
+      break;
+
+    //____________________________________________________________________________
+    case GATHER_CHAMPIONS:
+
+      console.log(gatherChampions(currentPrivateEntries));
+
+      break;
+  
+    //____________________________________________________________________________
+        
     default:
       console.log("Impossible Action")
       break;

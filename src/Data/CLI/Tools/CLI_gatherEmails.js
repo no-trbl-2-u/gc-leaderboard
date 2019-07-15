@@ -9,8 +9,8 @@ function stripEmailsFromSource(originalEntries) {
 
 
 //____________________ Test Case __________________________________
-const { randomPrivateEntries } = require('../../utilities');
-console.log(stripEmailsFromSource(randomPrivateEntries));
+// const { randomPrivateEntries } = require('../../utilities');
+// console.log(stripEmailsFromSource(randomPrivateEntries));
 //_________________________________________________________________
 
 module.exports = { stripEmailsFromSource }

@@ -23,7 +23,7 @@ export interface ScoreProps {
 export default function LayoutScores(props: ScoreProps) {
 
   // SET YOUR EVENT TITLE HERE!
-  const event: string = "Philly Comic & Cosplay"
+  const event: string = "Stranger Things Dance Party Underground Arts"
 
   // onLoad -> set document.title to 'event'
   useEffect(() => {

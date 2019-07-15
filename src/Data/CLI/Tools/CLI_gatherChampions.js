@@ -8,9 +8,9 @@ function gatherChampions(sourceEntries, quantity) {
 }
 
 //________________Test Case_______________________
-const { randomPrivateEntries } = require('../../utilities');
-const topN = 20;
-console.log(gatherChampions(randomPrivateEntries, topN));
+// const { randomPrivateEntries } = require('../../utilities');
+// const topN = 20;
+// console.log(gatherChampions(randomPrivateEntries, topN));
 //________________________________________________
 
 module.exports = { gatherChampions }

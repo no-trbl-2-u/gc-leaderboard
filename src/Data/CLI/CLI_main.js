@@ -108,7 +108,7 @@ async function doubleCheckDirectoryName(directoryPath) {
 }
 
 async function runAction(option) {
-  console.log(option)
+  // console.log(option)
 
   switch(option.action){
     //____________________________________________________________________________

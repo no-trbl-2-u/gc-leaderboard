@@ -184,6 +184,7 @@ async function runAction(option) {
   
     //____________________________________________________________________________
 
+    //TODO: Create Flag (-update)
     case UPDATE_ENTRIES:
       // Choose Player
       const chosenPlayer = option.playerNameToUpdate;
@@ -251,10 +252,7 @@ async function main() {
     
     // No Flag or Incorrect Flag run questions
     default:
-      // Acquire option
       const optionChoice = await askForAction();
-
-      // Run action based on option
       await runAction(optionChoice);
   }
 }

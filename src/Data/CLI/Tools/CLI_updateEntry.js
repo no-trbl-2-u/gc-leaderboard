@@ -14,9 +14,14 @@ function createUpdatedEntries (playerToUpdate, currentEntries, newHighScore) {
       ).sort((a, b) => b.score - a.score);
 
   // Update their top score
-  const playersTopScore = currentPlayersScores[0];
-  playersTopScore.score = newHighScore;
-
+  const playersTopScore = Object.assign({}, currentPlayersScores[0]);
+  
+  if(playersTopScore.name) {
+    playersTopScore.score = newHighScore;
+  } else {
+    return entriesWithoutPlayerScores
+  }
+  
   // Replace their old top score
   const updatedPlayerScores = currentPlayersScores
     .slice(1)

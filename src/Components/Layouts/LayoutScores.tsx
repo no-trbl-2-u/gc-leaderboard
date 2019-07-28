@@ -28,13 +28,15 @@ export default function LayoutScores(props: ScoreProps) {
   const { entries, tournEntries } = props
 
   // TODO: Dropdown(Filter) for "By Song Selector"
+  // TODO: Toggle() for "available"
+  
   return (
     <section className="LayoutScores">
       <TwitterBox />
       <TournamentText event={ event } />
 
         {/* TOURNAMENT LEADERBOARD */}
-      <TournLeaderBoard entries={ tournEntries } event={ event } />
+      {/* <TournLeaderBoard entries={ tournEntries } event={ event } /> */}
 
       <LeaderBoard entries={ entries } />
       <SearchScore entries={ entries } event={ event }/>

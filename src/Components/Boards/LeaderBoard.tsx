@@ -24,7 +24,9 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
         place={ index + 1 }
         name={ name }
         score={ (Number(score)) }
-        top3={(index === 0 && available === "true") ? "top3" : ""}
+
+        top3={(index === 1 ) ? "top3" : ""}
+        // top3={(index === 0 && available === "true") ? "top3" : ""}
         available={ available }
         song={ song }
       />

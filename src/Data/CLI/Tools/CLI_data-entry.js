@@ -2,7 +2,6 @@ const inquirer = require('inquirer');
 
 const originalEntries = require('../../privateEntries.json');
 
-
 const questions = [
   {
     type: 'list',
@@ -107,7 +106,7 @@ async function createTemplate ({name, score, available, telephone, email, mailin
 async function askQuestions () {
   console.log('');
   console.log('=============================================');
-  console.log('Create Groove Catcher Entry');
+  console.log('Groove Catcher Score Entry Tool');
   console.log('=============================================');
   console.log('');
 
@@ -123,12 +122,9 @@ async function askQuestions () {
   return (correct === 'true') ? entryFull : askQuestions();
 }
 
-
-// Run
 async function createEntry () {
   const results = await askQuestions();
 
-  // const backUp = originalEntries
   const privateEntry = originalEntries.concat(results)
   const safeEntry = privateEntry.map(
     ea => ({

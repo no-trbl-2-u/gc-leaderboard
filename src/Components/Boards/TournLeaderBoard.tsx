@@ -36,7 +36,7 @@ const scores = (entries: any[]): JSX.Element[] => [...entries]
         name={ name }
         score={ (Number(score)) }
         // Bad Workaround for Winner
-        top3={(name === 'Niki') ? "top" : ""}
+        top3={(name === 'Sully') ? "top" : ""}
         // Bad Workaround for available
         available={ "true" }
         song={ song }

@@ -6,13 +6,15 @@ const { listDirectories } = require('../utilities');
 const currentPrivateEntries = require('../privateEntries.json');
 const currentPublicEntries = require('../publicEntries.json');
 const currentBackupEntries = require('../entries_backup.json');
+const currentTournamentEntries = require('../tournamentEntries.json');
 
 // From Tools
 const { createEntry } = require('./Tools/CLI_data-entry');
 const { clearCurrentEntries, backupCurrentEntries } = require('./Tools/CLI_backUpAndClearEntries');
 const { stripEmailsFromSource } = require('./Tools/CLI_gatherEmails');
 const { gatherChampions } = require('./Tools/CLI_gatherChampions');
-const { createUpdatedEntries } = require('./Tools/CLI_updateEntry')
+const { createUpdatedEntries } = require('./Tools/CLI_updateEntry');
+const { createTournamentEntry } = require('./Tools/CLI_tournamentData-entry');
 const {
   CREATE_ENTRY,
   CREATE_TOURNAMENT_ENTRY,
@@ -29,15 +31,6 @@ const flagEntered = process.argv[2];
 
 // TODO: Write inside utility.js a utility importer for all entries
 // TODO:   -> to make database migration much easier
-
-/* 
-  TODO: rewrite CREATE_TOURNAMENT_ENTRY
-*/
-
-/*
-TODO: flags:
-  TODO: -get (getEmails || getChampions)
-*/
 
 const currentDirectories = listDirectories(path.join(__dirname, '../previousTournaments'))
 
@@ -137,6 +130,15 @@ async function runAction(option) {
 
     //____________________________________________________________________________
 
+    case CREATE_TOURNAMENT_ENTRY:
+      const newTournEntry = await createTournamentEntry();
+      const newTournamentEntries = currentTournamentEntries.concat(newTournEntry)
+      // Commit to filesystem
+      fs.writeFileSync('../tournamentEntries.json', JSON.stringify(newTournamentEntries));
+
+      break;
+    //____________________________________________________________________________
+
     case BACKUP_AND_CLEAR:
       const sanityResult = await doubleCheckDirectoryName(option.newDirectory);
 
@@ -220,13 +222,18 @@ async function main() {
       console.log("  Current flags include: ");
       console.log(" ");
       console.log('\t-h       --Display a list of all current possible flags');
-      console.log('\t-d       --Create Entry in current tournament');
+      console.log('\t-e       --Create Entry in current tournament');
+      console.log('\t-t       --Create Tournament Entry for current tournament');
       console.log('\t-l       --List All previous Tournaments/Directories');
       console.log('\t-backup  --Backup and Clear current entries');
       console.log('\t-get     --Gather Emails from a directory or current tournament');
       break;
+    
+    case '-t':
+      await runAction({action: CREATE_TOURNAMENT_ENTRY});
+      break;
 
-    case '-d':
+    case '-e':
       await runAction({action: CREATE_ENTRY});
       break;
 

@@ -2,15 +2,17 @@ const fs = require('fs');
 const path = require('path');
 const inquirer = require('inquirer');
 const { listDirectories } = require('../utilities');
-const flag = process.argv[2];
 
 const currentPrivateEntries = require('../privateEntries.json');
+const currentPublicEntries = require('../publicEntries.json');
+const currentBackupEntries = require('../entries_backup.json');
 
 // From Tools
 const { createEntry } = require('./Tools/CLI_data-entry');
 const { clearCurrentEntries, backupCurrentEntries } = require('./Tools/CLI_backUpAndClearEntries');
 const { stripEmailsFromSource } = require('./Tools/CLI_gatherEmails');
 const { gatherChampions } = require('./Tools/CLI_gatherChampions');
+const { createUpdatedEntries } = require('./Tools/CLI_updateEntry')
 const {
   CREATE_ENTRY,
   CREATE_TOURNAMENT_ENTRY,
@@ -18,8 +20,12 @@ const {
   BACKUP_AND_CLEAR,
   GATHER_EMAILS,
   GATHER_CHAMPIONS,
-  FORBIDDEN_CHARACTERS
+  FORBIDDEN_CHARACTERS,
+  UPDATE_ENTRIES
 } = require('./Tools/CONSTANTS');
+
+const flagEntered = process.argv[2];
+
 
 // TODO: Write inside utility.js a utility importer for all entries
 // TODO:   -> to make database migration much easier
@@ -30,10 +36,6 @@ const {
 
 /*
 TODO: flags:
-  TODO: -h/-help (List all Flags)
-  TODO: -ls (List Directories)
-  TODO: -e (Create Entry)
-  TODO: -backup (backup Entries & clear)
   TODO: -get (getEmails || getChampions)
 */
 
@@ -53,12 +55,13 @@ const optionQuestions = [
     name: 'action',
     message: 'What would you like to do?',
     choices: [
-      'Create Entry',
-      'Create Tournament Entry',
-      'List Directories',
-      'Backup and Clear current entries',
-      'Gather Emails',
-      'Get Champions from current entries'
+      CREATE_ENTRY,
+      CREATE_TOURNAMENT_ENTRY,
+      LIST_DIRECTORIES,
+      BACKUP_AND_CLEAR,
+      GATHER_EMAILS,
+      GATHER_CHAMPIONS,
+      UPDATE_ENTRIES
     ]
   },
   {
@@ -80,7 +83,19 @@ const optionQuestions = [
       ).join("") === inp
         ? true 
         : 'All Upper Case and no forbidden characters (:, ", /, \\, |, ?, ., *, and spaces.'
-  }
+  },
+  {
+    type: 'input',
+    name: 'playerNameToUpdate',
+    message: 'What is the name of the player who you would like to update?',
+    when: options => options.action === UPDATE_ENTRIES
+  },
+  {
+    type: 'input',
+    name: 'newHighScore',
+    message: 'What is their new high score?',
+    when: options => options.action === UPDATE_ENTRIES
+  },
 ];
 
 
@@ -108,8 +123,6 @@ async function doubleCheckDirectoryName(directoryPath) {
 }
 
 async function runAction(option) {
-  // console.log(option)
-
   switch(option.action){
     //____________________________________________________________________________
 
@@ -137,6 +150,7 @@ async function runAction(option) {
       break;
 
     //____________________________________________________________________________
+
     case LIST_DIRECTORIES:
 
       console.log(currentDirectories);
@@ -159,6 +173,7 @@ async function runAction(option) {
       break;
 
     //____________________________________________________________________________
+
     case GATHER_CHAMPIONS:
 
       console.log(gatherChampions(currentPrivateEntries));
@@ -166,9 +181,29 @@ async function runAction(option) {
       break;
   
     //____________________________________________________________________________
+
+    case UPDATE_ENTRIES:
+      // Choose Player
+      const chosenPlayer = option.playerNameToUpdate;
+      const newHighScore = option.newHighScore
+
+      // Create New Entry from player name
+      const updatedPrivateEntries = createUpdatedEntries(chosenPlayer, currentPrivateEntries, newHighScore);
+      const updatedPublicEntries = createUpdatedEntries(chosenPlayer, currentPublicEntries, newHighScore);
+      const updatedBackupEntries = createUpdatedEntries(chosenPlayer, currentBackupEntries, newHighScore);
+
+      // Write new Entries to file system
+      fs.writeFileSync('../privateEntries.json', JSON.stringify(updatedPrivateEntries));
+      fs.writeFileSync('../publicEntries.json', JSON.stringify(updatedPublicEntries));
+      fs.writeFileSync('../entries_backup.json', JSON.stringify(updatedBackupEntries))
+      break;
+  
+    //____________________________________________________________________________
         
     default:
-      console.log("Impossible Action")
+
+      console.log("Impossible Action");
+
       break;
 
     //____________________________________________________________________________
@@ -179,11 +214,42 @@ async function main() {
   // Print Greeting
   greeting();
 
-  // Acquire option
-  const optionChoice = await askForAction();
+  // flag switch
+  switch(flagEntered){
+    case '-h':
+      console.log("  Current flags include: ");
+      console.log(" ");
+      console.log('\t-h       --Display a list of all current possible flags');
+      console.log('\t-d       --Create Entry in current tournament');
+      console.log('\t-l       --List All previous Tournaments/Directories');
+      console.log('\t-backup  --Backup and Clear current entries');
+      console.log('\t-get     --Gather Emails from a directory or current tournament');
+      break;
 
-  // Run action based on option
-  await runAction(optionChoice);
+    case '-d':
+      await runAction({action: CREATE_ENTRY});
+      break;
+
+    case '-l':
+      await runAction({action: LIST_DIRECTORIES});
+      break;
+
+    case '-backup':
+      await runAction({action: BACKUP_AND_CLEAR});
+      break;
+    
+    case '-get':
+      await runAction({action: GATHER_EMAILS});
+      break;
+    
+    // No Flag or Incorrect Flag run questions
+    default:
+      // Acquire option
+      const optionChoice = await askForAction();
+
+      // Run action based on option
+      await runAction(optionChoice);
+  }
 }
 
 main();

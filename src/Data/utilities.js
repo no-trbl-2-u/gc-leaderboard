@@ -10,5 +10,5 @@ const randomPrivateEntries = require('./previousTournaments/AWESOMECON/privateEn
 
 module.exports = { 
   listDirectories,
-  randomPrivateEntries
+  randomPrivateEntries,
 }

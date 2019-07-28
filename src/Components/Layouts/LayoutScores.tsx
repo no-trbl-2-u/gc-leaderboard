@@ -1,8 +1,3 @@
-/*
-  Shows the current layout for
-    your High Score Page.
-*/
-
 import React,{ useEffect } from 'react';
 
 import TwitterBox from '../TwitterBox';
@@ -23,7 +18,7 @@ export interface ScoreProps {
 export default function LayoutScores(props: ScoreProps) {
 
   // SET YOUR EVENT TITLE HERE!
-  const event: string = "Stranger Things Dance Party Underground Arts"
+  const event: string = "NJ Gamercon 2019 "
 
   // onLoad -> set document.title to 'event'
   useEffect(() => {
@@ -32,6 +27,7 @@ export default function LayoutScores(props: ScoreProps) {
 
   const { entries, tournEntries } = props
 
+  // TODO: Dropdown(Filter) for "By Song Selector"
   return (
     <section className="LayoutScores">
       <TwitterBox />

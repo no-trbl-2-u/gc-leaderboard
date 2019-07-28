@@ -2,25 +2,29 @@ import React from 'react';
 
 import { Link } from '@reach/router'
 
+
 interface ITournamentText {
   event: string;
 }
 
-// TODO: Build "<ActiveTournament/>"
-export default function
-TournamentText (props: ITournamentText) {
+export default
+function TournamentText (props: ITournamentText) {
+  const style = {
+    margin: "15px"
+  }
+
   return (
     <section className="TournamentText-container">
       <div className="TournamentText">
         {/* Event Title */}
-        <h1>{ props.event }</h1>
+        <h1 style={style}>{ props.event }</h1>
 
         {/* Details for Tournament Placement (Fri-Sat) */}
-        {/* <div>The top 10 Scores by 4PM Saturday will participate in our final round of two of our most difficult levels</div> */}
-        {/* <h3>Tournament will take place at 4:30PM</h3> */}
+        <div style={style}>The top 5 Scores by 8PM Tonight will participate in our final round with our most difficult level</div>
+        <h2 style={style}>Be here by 8:00PM to participate</h2>
 
         {/* Details for Tournament Placement (Sunday) */}
-        <h2>Highest Score by the end of the event will win a free Groove Catcher T-Shirt!</h2>        
+        <h3 style={style}>Highest Score by the end of the event will win a free Groove Catcher T-Shirt!</h3>        
 
         {/* First Prize */}
         {/* <h2>First Prize will receive Synchrony LED lights</h2> */}
@@ -32,10 +36,11 @@ TournamentText (props: ITournamentText) {
 
         {/* Final note */}
         <div>Follow your score: <span className="twitter">vizmoo.com</span></div>
-        <Link to="/selection">
+        {/* <Link to="/selection">
           <button>Click Here To Choose a different Tournament</button>
-        </Link>
+        </Link> */}
       </div>
     </section>
   );
 }
+

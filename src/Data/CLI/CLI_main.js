@@ -98,6 +98,12 @@ function askForAction () {
     .then(answers => answers)
 }
 
+function askForPlayerAndNewScore () {
+  return inquirer
+    .prompt(optionQuestions)
+    .then(answers => answers)
+}
+
 async function doubleCheckDirectoryName(directoryPath) {
   const sanityCheck = {
     type: 'list',
@@ -186,9 +192,11 @@ async function runAction(option) {
 
     //TODO: Create Flag (-update)
     case UPDATE_ENTRIES:
+      console.log(option)
+
       // Choose Player
-      const chosenPlayer = option.playerNameToUpdate;
-      const newHighScore = option.newHighScore
+      const chosenPlayer = option.playerNameToUpdate || '';
+      const newHighScore = option.newHighScore || '';
 
       // Create New Entry from player name
       const updatedPrivateEntries = createUpdatedEntries(chosenPlayer, currentPrivateEntries, newHighScore);
@@ -226,6 +234,7 @@ async function main() {
       console.log('\t-e       --Create Entry in current tournament');
       console.log('\t-t       --Create Tournament Entry for current tournament');
       console.log('\t-l       --List All previous Tournaments/Directories');
+      // console.log("\t-update  --Update and a player's entry");      
       console.log('\t-backup  --Backup and Clear current entries');
       console.log('\t-get     --Gather Emails from a directory or current tournament');
       break;
@@ -241,6 +250,11 @@ async function main() {
     case '-l':
       await runAction({action: LIST_DIRECTORIES});
       break;
+
+    // case '-update':
+    //   const results = await askForPlayerAndNewScore();
+    //   await runAction({action: UPDATE_ENTRIES});
+    //   break;
 
     case '-backup':
       await runAction({action: BACKUP_AND_CLEAR});

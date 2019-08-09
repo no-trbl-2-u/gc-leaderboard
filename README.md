@@ -42,24 +42,6 @@ node CLI_main.js
 
 **Try to avoid this unless the player is in the top ten**
 
-## To show the final Tournament scoreboard
-*The scoreboard dedicated to showing the tournament winners' scores.*
-* Open ```App.tsx```
-
-* Uncomment the line that reads
-```<TournLeaderBoard entries= {tournEntries} />```
-### Commented out
-```ts
-{/* TOURNAMENT LEADERBOARD */}
-{/* <TournLeaderBoard entries= {tournEntries } /> */}
-```
-
-### Uncommented out
-```ts
-{/* TOURNAMENT LEADERBOARD */}
-<TournLeaderBoard entries= {tournEntries } />
-```
-
 ## To Change the Event Title
 Inside of: src/Components/Layouts/LayoutScore.jsx
 
@@ -75,9 +57,6 @@ Inside of: src/Components/Layouts/LayoutScore.jsx
 
 **IMPORTANT!!!**
 If you delete the quotation marks around the sentence, **THE SITE WILL BREAK!!!**
-
-## To Move to the next round of the final tournament
-Manually delete the score inside of Tournament
 
 ## To change any of the Tournament Text
 All of the tournament information is located inside the ```<TournamentText />``` component.
@@ -133,22 +112,44 @@ export default function TournamentText () {
 
 *Hint: **div**s are for raw-text*
 
-
-## To edit the "TITLE" of the event...
-Travel to gc-leaderboard/src/Layouts/LayoutScores.tsx and
-track down this line of code:
-```js
-// SET YOUR EVENT TITLE HERE!
-const event = 'Groove Catcher VR 2019'
-// SET THE EVENT TITLE ABOVE!
-```
-
-Now just change the value of 'event' to be the TITLE of your choice.
-
-*Keep Text inside of the apostrophe's to prevent any errors.*
-
 ```js
 // SET YOUR EVENT TITLE HERE!
 const event = 'YOUR NEW TITLE!'
 // SET THE EVENT TITLE ABOVE!
 ```
+
+## To show the final Tournament scoreboard
+*The scoreboard dedicated to showing the tournament winners' scores.*
+* Open ```App.tsx```
+
+* Uncomment the line that reads
+```<TournLeaderBoard entries= {tournEntries} />```
+### Commented out
+```ts
+{/* TOURNAMENT LEADERBOARD */}
+{/* <TournLeaderBoard entries= {tournEntries } /> */}
+```
+
+### Uncommented out
+```ts
+{/* TOURNAMENT LEADERBOARD */}
+<TournLeaderBoard entries= {tournEntries } />
+```
+
+## To Move to the next round of the final tournament
+- Manually delete the score inside of tournamentEntries.json
+  - **LEAVE THE ADMIN SCORE or AT LEAST ONE SCORE!**
+- Open up src/Boads/TournLeaderBoard.jsx
+- Comment out the "Round One" line
+  - ```ts
+    ...
+      
+      <header className="LeaderBoard-header">{ event } GCVR Tournament Round One!! </header>
+
+      {/* <header className="LeaderBoard-header">{ event } GCVR Tournament Final Round!! </header> */}
+
+      {/* <header className="LeaderBoard-header">{ event } Tournament Winner!!! </header> */}
+    
+    ...
+
+    ```

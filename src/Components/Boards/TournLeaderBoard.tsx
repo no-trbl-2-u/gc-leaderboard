@@ -11,7 +11,9 @@ export default function
     const { entries, event } = props
     return (
       <section className="LeaderBoard-container">
-        <header className="LeaderBoard-header">{ event } Tournament Winner!!! </header>
+        <header className="LeaderBoard-header">{ event } Tournament Round One!! </header>
+        {/* <header className="LeaderBoard-header">{ event } Tournament Final Round!! </header> */}
+        {/* <header className="LeaderBoard-header">{ event } Tournament Winner!!! </header> */}
         {
           scores(entries)
         }

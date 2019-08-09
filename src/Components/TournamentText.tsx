@@ -26,8 +26,8 @@ function TournamentText (props: ITournamentText) {
         <h1 style={styles.event}>{ props.event }</h1>
 
         {/* Details for Tournament Placement (Fri-Sat) */}
-        {/* <div style={style}>The top 5 Scores by 8PM Tonight will participate in our final round with our most difficult level</div> */}
-        {/* <h2 style={style}>Be here by 8:00PM to participate</h2> */}
+        {/* <div style={styles.text}>The top 5 Scores by 8PM Tonight will participate in our final round with our most difficult level</div> */}
+        {/* <h2 style={styles.text}>Be here by 8:00PM to participate</h2> */}
 
         {/* Details for Tournament Placement (Sunday) */}
         <h3 style={styles.text}>Highest Score by 4PM</h3>

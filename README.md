@@ -17,26 +17,30 @@ Make sure you're in ```/gc-leaderboard``` and **NOT** in a child folder like ```
 npm start
 ```
 
-## To add an entry (normal)
+## To add an entry (normal or tournament)
 ```sh
 cd gc-leaderboard/src/Data
 
-node CLI_data-entry.js
+node CLI_main.js
 ```
-This starts up the familiar questionnaire and will only update the basic "privateEntries.json
+**Create Entry** (for normal)
 
-## To add an entry (final round)
-```sh
-cd gc-leaderboard/src/Data
+**Create Tournament Entry** (for Tournament)
 
-node CLI_tournament-final.js
-```
+*This starts up the familiar questionnaire to begin a specific task*
 
 ## To manually edit an entry
 
-* Open the ```publicEntries.json``` and/or
-* Open the ```privateEntries.json```
-* Manually change the data of your most recent entries.
+```sh
+cd gc-leaderboard/src/Data
+
+node CLI_main.js
+```
+**Update a player's score**
+
+*It will then ask for the name of the player (Not Case Sensetive)*
+
+**Try to avoid this unless the player is in the top ten**
 
 ## To show the final Tournament scoreboard
 *The scoreboard dedicated to showing the tournament winners' scores.*
@@ -46,31 +50,34 @@ node CLI_tournament-final.js
 ```<TournLeaderBoard entries= {tournEntries} />```
 ### Commented out
 ```ts
-            {/* TOURNAMENT LEADERBOARD */}
-      {/* <TournLeaderBoard entries= {tournEntries } /> */}
+{/* TOURNAMENT LEADERBOARD */}
+{/* <TournLeaderBoard entries= {tournEntries } /> */}
 ```
 
 ### Uncommented out
 ```ts
-            {/* TOURNAMENT LEADERBOARD */}
-      <TournLeaderBoard entries= {tournEntries } />
+{/* TOURNAMENT LEADERBOARD */}
+<TournLeaderBoard entries= {tournEntries } />
 ```
 
-## To show all the scores collected so far
-* Open App.tsx
-* Uncomment the line that reads ```<AllScores entries={ entries } />```
+## To Change the Event Title
+Inside of: src/Components/Layouts/LayoutScore.jsx
 
-### Commented out
-``` ts
-  {/* ALL THE SCORES ACCUMULATED SO FAR */}
-  {/* <AllScores entries={ entries } /> */}
+```ts
+...
+  export default function LayoutScores(props: ScoreProps) {
+
+  // SET YOUR EVENT TITLE HERE!
+  const event: string = "Put your event title here!!!"
+
+...
 ```
 
-### Uncommented
-``` ts
-  {/* ALL THE SCORES ACCUMULATED SO FAR */}
-  <AllScores entries={ entries } />
-```
+**IMPORTANT!!!**
+If you delete the quotation marks around the sentence, **THE SITE WILL BREAK!!!**
+
+## To Move to the next round of the final tournament
+Manually delete the score inside of Tournament
 
 ## To change any of the Tournament Text
 All of the tournament information is located inside the ```<TournamentText />``` component.
@@ -81,6 +88,8 @@ cd gc-leaderboard/src/TournamentText
 
 Now just Change any of the text within the HTML to fit your tournament.
 
+***For Ease of use, I wrote in some filler options. You will only need to uncomment out the line to show it on the site.***
+
 ```jsx
 import React from 'react';
 
@@ -89,20 +98,29 @@ export default function TournamentText () {
       <section className="TournamentText-container">
         <div className="TournamentText">
 
-        {/* Change the Text Below This Part */}
-          
-          <h2>Leaderboard Contest Today </h2>
-          <h1>Finale at 7pm - $200 in Prizes</h1>
-          
-          <div>Play and put your score on the leaderboard by 6.30pm.</div>
-          <div>2d & 3rd places - Groove Catcher T-shirt.</div>
-          <div>Top 5 players will compete at 7pm on a new level.</div>
-        
-          <h2>Top Prize: Synchrony LEDs - music-reactive lights ($150 value)</h2> 
-          <h3>T-shirts for top 3</h3>
-          <div>Follow your score: <span className="twitter">vizmoo.com/vrfest</span>
+        {/* ----------- Change the Text Below This Part ----------- */}
 
-        {/* Change the Text Above This Part */}
+        {/* Details for Tournament Placement (Fri-Sat) */}
+        {/* <div style={style}>The top 5 Scores by 8PM Tonight will participate in our final round with our most difficult level</div> */}
+        {/* <h2 style={style}>Be here by 8:00PM to participate</h2> */}
+
+        {/* Details for Tournament Placement (Sunday) */}
+        <h3 style={styles.text}>Highest Score by 4PM</h3>
+        <h3 style={styles.text}>will win a free Groove Catcher T-Shirt!</h3>
+                
+
+        {/* First Prize */}
+        {/* <h2>First Prize will be a $50 Amazon Gift Card</h2> */}
+        
+        {/* ----- OR -----*/}
+        {/* <h2>First Prize will receive Synchrony LED lights</h2> */}
+        {/* <div>The world's most advanced neural synch technology ($150 value)</div> */}
+       
+        {/* Second and Third Prize */}
+        {/* <h3>Second and Third Place will receive Groove Catcher T-Shirts</h3> */}
+
+
+        {/* ----------- Change the Text Above This Part ---------== */}
 
         </div>
 

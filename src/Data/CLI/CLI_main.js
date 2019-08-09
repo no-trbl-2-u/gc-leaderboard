@@ -32,6 +32,10 @@ const flagEntered = process.argv[2];
 // TODO: Write inside utility.js a utility importer for all entries
 // TODO:   -> to make database migration much easier
 
+// TODO: Autogenerate privateEntries.json if not found
+// TODO: Autogenerate entries_backup.json if not found
+
+
 const currentDirectories = listDirectories(path.join(__dirname, '../previousTournaments'))
 
 const greeting = () => {

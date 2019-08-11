@@ -3,10 +3,15 @@ const path = require('path');
 const inquirer = require('inquirer');
 const { listDirectories } = require('../utilities');
 
-const currentPrivateEntries = require('../privateEntries.json');
+// import all current Entries && create tournament/backup if inexistent
+let currentPrivateEntries = require('../privateEntries.json') || [];
+let currentBackupEntries = require('../entries_backup.json') || [];
 const currentPublicEntries = require('../publicEntries.json');
-const currentBackupEntries = require('../entries_backup.json');
 const currentTournamentEntries = require('../tournamentEntries.json');
+
+if(currentPrivateEntries === []) {
+  console.log('emptyJawn')
+}
 
 // From Tools
 const { createEntry } = require('./Tools/CLI_data-entry');

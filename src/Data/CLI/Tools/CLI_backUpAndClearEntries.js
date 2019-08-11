@@ -1,37 +1,13 @@
 const fs = require('fs');
+const { empty } = require('../../utilities');
 
 // clearCurrentEntries :: Writer IO()
 function clearCurrentEntries() {
-  const emptyPublicEntries = [{
-    "name": "admin",
-    "score": "0",
-    "available": "false",
-    "song": "Solid Roots AIO"
-  }];
-  const emptyEntries_backup = [{
-    "song": "Solid Roots AIO",
-    "score": "0",
-    "name": "admin",
-    "mailingList": "false",
-    "email": "",
-    "available": "false",
-    "telephone": "0",
-    "zip": ""}];;
-  const emptyPrivateEntries = [{
-    "song": "Solid Roots AIO",
-    "score": "0",
-    "name": "admin",
-    "mailingList": "false",
-    "email": "",
-    "available": "false",
-    "telephone": "0",
-    "zip": ""}];
-  const emptyTournamentEntries = [{"name":"admin", "score":"0"}];
   
-  fs.writeFileSync('../entries_backup.json', JSON.stringify(emptyEntries_backup))
-  fs.writeFileSync('../privateEntries.json', JSON.stringify(emptyPrivateEntries));
-  fs.writeFileSync('../publicEntries.json', JSON.stringify(emptyPublicEntries));
-  fs.writeFileSync('../tournamentEntries.json', JSON.stringify(emptyTournamentEntries));
+  fs.writeFileSync('../entries_backup.json', JSON.stringify(empty.backupEntries))
+  fs.writeFileSync('../privateEntries.json', JSON.stringify(empty.privateEntries));
+  fs.writeFileSync('../publicEntries.json', JSON.stringify(empty.publicEntires));
+  fs.writeFileSync('../tournamentEntries.json', JSON.stringify(empty.tournamentEntries));
 
   console.log("==============");
   console.log("Files Emptied");
@@ -55,7 +31,6 @@ function backupCurrentEntries(newDirectory) {
   fs.writeFileSync(`../previousTournaments/${newDirectory}/privateEntries.json`, JSON.stringify(currentPrivateEntries));
   fs.writeFileSync(`../previousTournaments/${newDirectory}/tournamentEntries.json`, JSON.stringify(currentTournamentEntries));
 }
-
 
 module.exports = {
   clearCurrentEntries,
